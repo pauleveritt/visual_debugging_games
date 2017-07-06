@@ -5,6 +5,7 @@ verify_ssl = true
 [packages]
 Sphinx = "*"
 arcade = "*"
+sphinx_rtd_theme = "*"
 
 [packages."sphinxcontrib.youtube"]
 git = "git://github.com/shomah4a/sphinxcontrib.youtube.git"

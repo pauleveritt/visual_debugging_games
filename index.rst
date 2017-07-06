@@ -1,14 +1,19 @@
-.. Visual Debugging and Games documentation master file, created by
-   sphinx-quickstart on Mon Jul  3 17:21:54 2017.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+Visual Debugging with Games
+===========================
 
-Welcome to Visual Debugging and Games's documentation!
-======================================================
+Welcome to the docs and code for the *Visual Debugging with Games*
+tutorial, where we learn about PyCharm's visual debugger in the
+process of writing an
+`Arcade <http://arcade.academy>`_
+2d game for Python 3.6.
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+    :maxdepth: 1
+    :caption: Contents:
+
+    background.rst
+    python_pycharm_setup.rst
+    arcade_setup/index.rst
 
 
 
