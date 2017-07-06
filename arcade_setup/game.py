@@ -1,3 +1,4 @@
 import arcade
 
-print(arcade.RELEASE)
+if __name__ == '__main__':
+    print(arcade.RELEASE)
