@@ -30,7 +30,21 @@ Steps
    .. literalinclude:: game.py
         :language: python
         :linenos:
+        :emphasize-lines: 9, 13-15, 17-18
 
+   - *Line 9*. We will constantly update the position of the label, so
+     let's initialize it with a starting position.
+
+   - *Line 13*. Center the text on the screen height.
+
+   - *Line 14-15*. Use Python 3.6 f-strings to make a label and draw it to
+     the middle of the screen. Note that this is going to change every time
+     line 18 updates the position.
+
+   - *Line 18*. Move the position one pixel to the right. This gets called
+     "a lot" by Arcade (where "a lot" can be configured.)
+
+#.
 
 What's Going On
 ===============

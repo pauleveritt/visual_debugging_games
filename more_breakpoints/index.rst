@@ -64,6 +64,9 @@ Steps
    breakpoint. Then, click the moving green arrow to resume execution. This
    time, it doesn't stop for execution.
 
+#. *Close the game*. Either close the Arcade window or click the red square
+   to terminate execution.
+
 What's Going On
 ===============
 

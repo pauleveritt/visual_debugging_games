@@ -36,7 +36,42 @@ Steps
    - *Line 16*. Make an instance of the game (then return it, in case you
      want to test the ``main`` function.)
 
+#. *Clear breakpoint*. If you still have a red circle from the previous
+   step, click on it to remove the breakpoint.
 
+#. *Break in the constructor*. Click in the gutter on line 8
+   (``self.title``) to set a breakpoint on that line.
+
+#. *Re-run debugger*. In the Debug window, click the green circle with
+   an arrow to restart the debugger.
+
+#. *Inspect variables*. Execution stops in the ``MyGame`` constructor. You
+   can see that ``title``, ``self``, and more are defined. Click the
+   triangle beside ``self`` to see the attributes on the instance.
+
+#. *Resume Program*. Click the "moving" green arrow in the debug window to
+   resume the program. It is past the one break point, so everything is
+   running as normal.
+
+#. *Set second breakpoint*. Click in the left gutter beside line 12
+   (``arcade.draw_text``). Execution stops, on that line. Now, only
+   ``self`` is in scope.
+
+#. *Resume Program*. Click the moving green arrow to resume execution. It
+   stops immediately again.
+
+#. *Clear and resume*. Click the red circle beside line 12 to clear that
+   breakpoint. Then, click the moving green arrow to resume execution. This
+   time, it doesn't stop for execution.
+
+#. *Close the game*. Either close the Arcade window or click the red square
+   to terminate execution.
 
 What's Going On
 ===============
+
+- Why didn't the first breakpoint get triggered?
+
+- Didn't need to restart when setting second breakpoint...why?
+
+- How could you prove execution stopped? (str(time.time())
