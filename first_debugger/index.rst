@@ -23,7 +23,6 @@ Steps
         :linenos:
         :emphasize-lines: 4-6, 10
 
-
    - *Lines 4-6*. Create a main function that draws a window and runs
      the Arcade main loop.
 
