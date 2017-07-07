@@ -28,7 +28,7 @@ class MyGame(arcade.Window):
         super().__init__(width, height, title)
         arcade.set_background_color(arcade.color.WHEAT)
 
-        self.player = Player('../images/player.png', 0.5)
+        self.player = Player('player.png', 0.5)
         self.player.center_y = 20
         self.all_sprites_list = arcade.SpriteList()
         self.all_sprites_list.append(self.player)
