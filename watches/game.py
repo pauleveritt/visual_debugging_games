@@ -6,7 +6,6 @@ MOVEMENT_SPEED = 5
 
 
 class Player(arcade.Sprite):
-
     def update(self):
         self.center_x += self.change_x
 
@@ -32,7 +31,22 @@ class MyGame(arcade.Window):
 
     def update(self, delta_time):
         self.all_sprites_list.update()
-        self.player.change_x = MOVEMENT_SPEED
+
+    def on_key_press(self, key, modifiers):
+
+        if key == arcade.key.UP:
+            pass
+        elif key == arcade.key.LEFT:
+            self.player.change_x = -MOVEMENT_SPEED
+        elif key == arcade.key.RIGHT:
+            self.player.change_x = MOVEMENT_SPEED
+
+    def on_key_release(self, key, modifiers):
+
+        if key == arcade.key.UP:
+            pass
+        elif key == arcade.key.LEFT or key == arcade.key.RIGHT:
+            self.player.change_x = 0
 
 
 def main():

@@ -2,6 +2,8 @@
 Debugging During Testing and Collisions
 =======================================
 
+- Collisions
+
 Steps
 =====
 

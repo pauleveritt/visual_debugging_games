@@ -3,17 +3,24 @@ import arcade
 SCREEN_WIDTH = 600
 SCREEN_HEIGHT = 600
 MOVEMENT_SPEED = 5
+GRAVITY = 0.3
 
 
 class Player(arcade.Sprite):
-
     def update(self):
+        self.change_y -= GRAVITY
         self.center_x += self.change_x
+        self.center_y += self.change_y
 
         if self.left < 0:
             self.left = 0
         elif self.right > SCREEN_WIDTH - 1:
             self.right = SCREEN_WIDTH - 1
+
+        if self.bottom < 0:
+            self.bottom = 0
+        elif self.top > SCREEN_HEIGHT - 1:
+            self.top = SCREEN_HEIGHT - 1
 
 
 class MyGame(arcade.Window):
@@ -32,7 +39,22 @@ class MyGame(arcade.Window):
 
     def update(self, delta_time):
         self.all_sprites_list.update()
-        self.player.change_x = MOVEMENT_SPEED
+
+    def on_key_press(self, key, modifiers):
+
+        if key == arcade.key.UP:
+            self.player.change_y = MOVEMENT_SPEED
+        elif key == arcade.key.LEFT:
+            self.player.change_x = -MOVEMENT_SPEED
+        elif key == arcade.key.RIGHT:
+            self.player.change_x = MOVEMENT_SPEED
+
+    def on_key_release(self, key, modifiers):
+
+        if key == arcade.key.UP:
+            pass
+        elif key == arcade.key.LEFT or key == arcade.key.RIGHT:
+            self.player.change_x = 0
 
 
 def main():
