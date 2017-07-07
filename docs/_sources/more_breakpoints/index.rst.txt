@@ -8,6 +8,13 @@ More Breakpoints and Class-Based Games
 
 - Variable explorer and inline values
 
+Objectives
+==========
+
+- Explore variables at a breakpoint
+
+- Move breakpoints without restarting
+
 Steps
 =====
 
@@ -16,6 +23,19 @@ Steps
    .. literalinclude:: game.py
         :language: python
         :linenos:
+        :emphasize-lines: 4-12, 16, 18
+
+   - *Line 4*. Arcade games are usually classes that fill in magic methods.
+     Here we make a subclass of Arcade's ``Window`` base class.
+
+   - *Lines 5-6*. Pass in window information, then give to the base class.
+
+   - *Lines 10-12*. The magic method ``on_draw`` is called many times per
+     second, to perform graphics operations.
+
+   - *Line 16*. Make an instance of the game (then return it, in case you
+     want to test the ``main`` function.)
+
 
 
 What's Going On
