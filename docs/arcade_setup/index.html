@@ -36,6 +36,7 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Visual Debugging and Games 1.0.0 documentation" href="../index.html"/>
+        <link rel="next" title="First Debugger and Arcade Windows" href="../first_debugger/index.html"/>
         <link rel="prev" title="Python Setup" href="../python_pycharm_setup.html"/> 
 
   
@@ -98,6 +99,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#what-s-going-on">What’s Going On</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../first_debugger/index.html">First Debugger and Arcade Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../first_breakpoint/index.html">First Breakpoints and Drawing Text</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../more_breakpoints/index.html">More Breakpoints and Class-Based Games</a></li>
 </ul>
 
             
@@ -182,9 +186,11 @@ file <code class="docutils literal"><span class="pre">game.py</span></code>.</p>
 <li><p class="first">In the new file, enter the following:</p>
 <div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">arcade</span>
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">arcade</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">arcade</span><span class="o">.</span><span class="n">RELEASE</span><span class="p">)</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">arcade</span><span class="o">.</span><span class="n">RELEASE</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 </li>
@@ -226,6 +232,8 @@ virtual environment.</p>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../first_debugger/index.html" class="btn btn-neutral float-right" title="First Debugger and Arcade Windows" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../python_pycharm_setup.html" class="btn btn-neutral" title="Python Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

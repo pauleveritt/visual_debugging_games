@@ -14,7 +14,19 @@ process of writing an
     background.rst
     python_pycharm_setup.rst
     arcade_setup/index.rst
-
+    first_debugger/index.rst
+    first_breakpoint/index.rst
+    more_breakpoints/index.rst
+    conditional_breakpoints/index.rst
+    basic_stepping/index.rst
+    enhanced_stepping/index.rst
+    watches/index.rst
+    stack_frames/index.rst
+    viewing_images/index.rst
+    consoles/index.rst
+    attach_process/index.rst
+    testing/index.rst
+    annotate_types/index.rst
 
 
 Indices and tables
