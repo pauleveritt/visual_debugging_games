@@ -190,7 +190,8 @@ we’ll have our first debugger experience.</p>
 <div class="section" id="steps">
 <h2>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Change the main block to have two lines that use Arcade:</p>
+<li><p class="first">Change the main block to call a <code class="docutils literal"><span class="pre">main</span></code> function which uses Arcade
+to open a window:</p>
 <div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -203,21 +204,33 @@ we’ll have our first debugger experience.</p>
 10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">arcade</span>
 
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">arcade</span><span class="o">.</span><span class="n">open_window</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="s1">&#39;Coin Game&#39;</span><span class="p">)</span>
-    <span class="n">arcade</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-
+<span class="hll"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+</span><span class="hll">    <span class="n">arcade</span><span class="o">.</span><span class="n">open_window</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="s1">&#39;Coin Game&#39;</span><span class="p">)</span>
+</span><span class="hll">    <span class="n">arcade</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
-</pre></div>
+<span class="hll">    <span class="n">main</span><span class="p">()</span>
+</span></pre></div>
 </td></tr></table></div>
+<ul class="simple">
+<li><em>Lines 4-6</em>. Create a main function that draws a window and runs
+the Arcade main loop.</li>
+<li><em>Line 10</em>. Change the main block to call this main function.</li>
+</ul>
 </li>
-<li><p class="first">Click the green arrow on line 3 and choose <code class="docutils literal"><span class="pre">Run</span></code>.</p>
+<li><p class="first">Click the green arrow on line 9 (the <code class="docutils literal"><span class="pre">if</span> <span class="pre">__name__</span></code> line) and choose
+<code class="docutils literal"><span class="pre">Debug</span></code>.</p>
 </li>
-<li><p class="first">A new window appears. It’s our game!</p>
+<li><p class="first">A new window appears. It’s our “game”!</p>
 </li>
-<li><p class="first">Close the window.</p>
+<li><p class="first">Close the Arcade window.</p>
+</li>
+<li><p class="first">Click the green arrow again and choose <code class="docutils literal"><span class="pre">Debug</span></code> again.</p>
+</li>
+<li><p class="first">This time, kill the debugging session by clicking the red square in
+the left of the <code class="docutils literal"><span class="pre">Debug</span></code> window. <em>Note: If it turns into a skull, that
+means the process isn’t really dead yet, so click it again.</em></p>
 </li>
 </ol>
 </div>

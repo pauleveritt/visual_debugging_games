@@ -9,11 +9,10 @@ Steps
 
 #. Edit ``game.py`` to have the following:s
 
-.. literalinclude:: game.py
-    :language: python
-    :linenos:
+   .. literalinclude:: game.py
+        :language: python
+        :linenos:
 
-#. Note that
 
 What's Going On
 ===============

@@ -15,17 +15,32 @@ Objectives
 Steps
 =====
 
-#. Change the main block to have two lines that use Arcade:
+#. Change the main block to call a ``main`` function which uses Arcade
+   to open a window:
 
    .. literalinclude:: game.py
         :language: python
         :linenos:
+        :emphasize-lines: 4-6, 10
 
-#. Click the green arrow on line 3 and choose ``Run``.
 
-#. A new window appears. It's our game!
+   - *Lines 4-6*. Create a main function that draws a window and runs
+     the Arcade main loop.
 
-#. Close the window.
+   - *Line 10*. Change the main block to call this main function.
+
+#. Click the green arrow on line 9 (the ``if __name__`` line) and choose
+   ``Debug``.
+
+#. A new window appears. It's our "game"!
+
+#. Close the Arcade window.
+
+#. Click the green arrow again and choose ``Debug`` again.
+
+#. This time, kill the debugging session by clicking the red square in
+   the left of the ``Debug`` window. *Note: If it turns into a skull, that
+   means the process isn't really dead yet, so click it again.*
 
 What's Going On
 ===============

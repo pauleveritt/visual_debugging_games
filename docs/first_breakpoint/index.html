@@ -182,6 +182,39 @@ breakpoint to stop execution at a certain place, allowing us to
 investigate.</p>
 <div class="section" id="steps">
 <h2>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Edit <code class="docutils literal"><span class="pre">game.py</span></code> to have the following:s</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">arcade</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">arcade</span><span class="o">.</span><span class="n">open_window</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="s1">&#39;Coin Game&#39;</span><span class="p">)</span>
+    <span class="n">arcade</span><span class="o">.</span><span class="n">set_background_color</span><span class="p">(</span><span class="n">arcade</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">WHEAT</span><span class="p">)</span>
+    <span class="n">arcade</span><span class="o">.</span><span class="n">start_render</span><span class="p">()</span>
+    <span class="n">arcade</span><span class="o">.</span><span class="n">draw_text</span><span class="p">(</span><span class="s1">&#39;Hello World&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="n">arcade</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">BLACK</span><span class="p">)</span>
+    <span class="n">arcade</span><span class="o">.</span><span class="n">finish_render</span><span class="p">()</span>
+    <span class="n">arcade</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
 </div>
 <div class="section" id="what-s-going-on">
 <h2>What’s Going On<a class="headerlink" href="#what-s-going-on" title="Permalink to this headline">¶</a></h2>
