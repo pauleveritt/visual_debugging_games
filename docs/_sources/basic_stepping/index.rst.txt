@@ -18,5 +18,10 @@ Steps
 - One line in on_draw and update
 
 
+   .. literalinclude:: game.py
+        :language: python
+        :linenos:
+
+
 What's Going On
 ===============

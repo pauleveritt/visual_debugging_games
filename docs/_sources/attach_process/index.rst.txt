@@ -7,5 +7,10 @@ Attach to Process and Moving Coins
 Steps
 =====
 
+   .. literalinclude:: game.py
+        :language: python
+        :linenos:
+
+
 What's Going On
 ===============

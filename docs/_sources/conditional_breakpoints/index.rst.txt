@@ -25,5 +25,10 @@ Game:
 Steps
 =====
 
+   .. literalinclude:: game.py
+        :language: python
+        :linenos:
+
+
 What's Going On
 ===============
