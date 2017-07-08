@@ -103,6 +103,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../enhanced_stepping/index.html">Enhanced Stepping and Motion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../watches/index.html">Watches and Keypresses</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Stack Frames and Vertical Movement</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#objectives">Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#steps">Steps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#what-s-going-on">What’s Going On</a></li>
 </ul>
@@ -181,6 +182,12 @@
 <li>Handling the up key</li>
 <li>Gravity</li>
 </ul>
+<div class="section" id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Show moving between the stack frames when stopped at a breakpoint</li>
+</ul>
+</div>
 <div class="section" id="steps">
 <h2>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
@@ -338,13 +345,34 @@ height of the screen.</li>
 <code class="docutils literal"><span class="pre">change_y</span></code> value based on the “speed”.</li>
 </ul>
 </li>
+<li><p class="first"><em>Play the game</em>. Click the debug button <img alt="debug" src="../_images/debug5.png" /> to run the game. Move
+the player left and right, then press up to move up. Press several
+times quickly to up further.</p>
+</li>
+<li><p class="first"><em>Set breakpoint</em>. Set a breakpoint on line 61 (<code class="docutils literal"><span class="pre">game</span> <span class="pre">=</span> <span class="pre">MyGame</span></code>).</p>
+</li>
+<li><p class="first"><em>Re-run</em>. Click the re-run button <img alt="rerun" src="../_images/stop_and_rerun4.png" /> to start execution from the
+beginning. Execution stops inside the <code class="docutils literal"><span class="pre">main()</span></code> function.</p>
+</li>
+<li><p class="first"><em>Stack frame</em>. Look at the <code class="docutils literal"><span class="pre">Frames</span></code> panel in the left side of the
+debug window. It shows two non-ghosted lines: <code class="docutils literal"><span class="pre">&lt;module&gt;</span></code> and
+<code class="docutils literal"><span class="pre">main</span></code>. Click on the <code class="docutils literal"><span class="pre">&lt;module&gt;</span></code> line to change to that frame.
+Note the change of variables to show what is now in scope.</p>
+</li>
+<li><p class="first"><em>Step into</em>. Click the step into button <img alt="stepinto" src="../_images/frames_step_into2.png" />. You are now on
+line 28, and in a new frame (<code class="docutils literal"><span class="pre">__init__</span></code>). You now have new variables
+in scope.</p>
+</li>
+<li><p class="first"><em>Clear breakpoint and terminate</em>. Click the red circle <img alt="breakpoint" src="../_images/db_set_breakpoint6.png" /> to
+clear it, then click <img alt="terminate" src="../_images/stop7.gif" /> to stop the game.</p>
+</li>
 </ol>
-<ul class="simple">
-<li>You can press up multiple times</li>
-</ul>
 </div>
 <div class="section" id="what-s-going-on">
 <h2>What’s Going On<a class="headerlink" href="#what-s-going-on" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Watches change evaluation as you move through frames</li>
+</ul>
 </div>
 </div>
 

@@ -183,8 +183,8 @@
 <h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Step out</li>
-<li>Only step through project code</li>
 <li>Run to cursor</li>
+<li>Only step through project code</li>
 </ul>
 </div>
 <div class="section" id="steps">
@@ -317,6 +317,21 @@ and break at line 38.</p>
 the cursor on that line. Now click the run to cursor button
 <img alt="runtocursor" src="../_images/frames_run_to_cursor.png" /> to continue executing until you reach that line.
 Execution stops there, just as if that line had a breakpoint.</p>
+</li>
+<li><p class="first"><em>Re-run</em>. Click the green re-run button <img alt="rerun" src="../_images/stop_and_rerun1.png" /> to restart the game
+and break at line 38.</p>
+</li>
+<li><p class="first"><em>Step into</em>. Click step into <img alt="stepinto" src="../_images/frames_step_into1.png" /> once to go into our
+<code class="docutils literal"><span class="pre">__init__</span></code>, then once again. We’re taken out of our project, into
+the <code class="docutils literal"><span class="pre">__init__</span></code> for Arcade’s <code class="docutils literal"><span class="pre">Window</span></code> class.</p>
+</li>
+<li><p class="first"><em>Close file and re-run</em>. Close the <code class="docutils literal"><span class="pre">application.py</span></code> and click
+re-run <img alt="rerun" src="../_images/stop_and_rerun1.png" /> to restart and stop on line 38.</p>
+</li>
+<li><p class="first"><em>Step into my code</em>. This time, click step into my code <img alt="stepintomy" src="../_images/step_into_my_code.png" />
+to step into <code class="docutils literal"><span class="pre">MyGame.__init__</span></code>. Then click it a few more times. It
+doesn’t leave code in your project and thus doesn’t step into library
+code such as Arcade.</p>
 </li>
 </ol>
 </div>

@@ -48,7 +48,7 @@ Steps
    if it is the up arrow. Put a breakpoint on line 37
    (``if key == arcade.key.UP``).
 
-#. *Re-run*. Click the re-run button |rerun| to run again under
+#. *Debug*. Click the debug button |debug| to run again under
    the debugger.
 
 #. *Press a key*. As the game is playing, press a key. Execution stops.
@@ -65,7 +65,6 @@ Steps
 What's Going On
 ===============
 
-.. |rerun| image:: ../images/stop_and_rerun.png
 .. |debug| image:: ../images/debug.png
 .. |new| image:: ../images/new.png
 .. |delete| image:: ../images/delete.png
