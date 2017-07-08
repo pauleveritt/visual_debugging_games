@@ -10,9 +10,7 @@ BOUNCINESS = 0.5
 
 
 class Coin(arcade.Sprite):
-    def reset_pos(self):
-        self.center_y = randrange(SCREEN_HEIGHT + 20, SCREEN_HEIGHT + 100)
-        self.center_x = randrange(SCREEN_WIDTH)
+    pass
 
 
 class Player(arcade.Sprite):
@@ -44,12 +42,10 @@ class MyGame(arcade.Window):
         self.all_sprites_list = arcade.SpriteList()
         self.all_sprites_list.append(self.player)
 
-        self.coin_list = arcade.SpriteList()
         for i in range(20):
             coin = Coin('coin.png', 0.2)
             coin.center_x = randrange(SCREEN_WIDTH)
             coin.center_y = randrange(SCREEN_HEIGHT)
-            self.coin_list.append(coin)
             self.all_sprites_list.append(coin)
 
     def on_draw(self):
