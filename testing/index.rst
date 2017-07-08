@@ -22,11 +22,11 @@ Steps
 
    - *Line 57*. Add this coin to the coin list.
 
-   - *Line 67-68*. Arcade makes it easy to find which sprites overlap with
+   - *Lines 67-68*. Arcade makes it easy to find which sprites overlap with
      a certain sprite. ``hit_list`` is thus, which coins collided with the
      player.
 
-   - *Line 69-70*. Kill each of the colliding coins.
+   - *Lines 69-70*. Kill each of the colliding coins.
 
 
 What's Going On
