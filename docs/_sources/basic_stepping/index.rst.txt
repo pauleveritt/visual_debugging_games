@@ -2,8 +2,6 @@
 Basic Stepping and Players
 ==========================
 
-TODO Ensure that every step ends with, and starts with, "Terminate"
-
 Objectives
 ==========
 

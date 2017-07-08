@@ -11,6 +11,10 @@ we press the right/left arrow key.
 
 - For now, skip "up" (will be bounciness later)
 
+Objectives
+==========
+
+- Use a dynamic watch to simplify tracking variables
 
 Steps
 =====
@@ -34,6 +38,37 @@ Steps
    - *Lines 44-49*. When the key is released, reset the ``change_x``
      value to 0, meaning, don't change the sprites x direction.
 
+#. *Add a watch*. Click the ``New Watch`` button |new| directly under
+   ``Variables``, in the left column beside the variable display. In
+   PyCharm versions after 2017.1, this is a green plus with watch
+   glasses underneath. Enter ``key === arcade.key.UP`` as the watch
+   value.
+
+#. *Set a breakpoint*. We want to stop on keypresses and quickly see
+   if it is the up arrow. Put a breakpoint on line 37
+   (``if key == arcade.key.UP``).
+
+#. *Re-run*. Click the re-run button |rerun| to run again under
+   the debugger.
+
+#. *Press a key*. As the game is playing, press a key. Execution stops.
+
+#. *Inspect the watch*. The watch makes it easy to see if the comparison
+   is true, instead of scrolling down and memorizing key codes.
+
+#. *Delete watch*. Click once to select the "variable" that has the
+   watch, then click the minus button |delete| to remove that watch.
+
+#. *Clear breakpoint and terminate*. Click the breakpoint |breakpoint|
+   to remove it, then click the red square |terminate| to stop the game.
 
 What's Going On
 ===============
+
+.. |rerun| image:: ../images/stop_and_rerun.png
+.. |debug| image:: ../images/debug.png
+.. |new| image:: ../images/new.png
+.. |delete| image:: ../images/delete.png
+.. |stepover| image:: ../images/frames_step_over.png
+.. |terminate| image:: ../images/stop.gif
+.. |breakpoint| image:: ../images/db_set_breakpoint.png
