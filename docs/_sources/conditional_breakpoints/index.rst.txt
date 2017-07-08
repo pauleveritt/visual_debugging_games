@@ -25,6 +25,8 @@ Objectives
 Steps
 =====
 
+#. Terminate the game, if it is running. (Remember: |terminate|)
+
 #. Edit ``game.py`` to have the following:
 
    .. literalinclude:: game.py
@@ -45,20 +47,73 @@ Steps
      "a lot" by Arcade (where "a lot" can be configured.) ``delta_time`` is
      how long it has been since ``update`` was last called.
 
-#. *Run under debugger*. Make sure there are no breakpoints and click the
-   green button (either on line 27 or in the debug window) to run it
-   under the debugger, just to see what it looks like.
+#. *Run under debugger*. Make sure there are no breakpoints |breakpoint|
+   and click the green button (either on line 27 or in the debug window)
+   to run it under the debugger, just to see what it looks like.
 
-#. *Set first breakpoint*. Investigate the delta_time.
+#. *Set first breakpoint*. What's ``delta_time``? Let's take a look. Set a
+   breakpoint |breakpoint| on line 18 (``self.position``). Execution stops
+   immediately and ``delta_time`` is a fraction of a second.
 
-#. *Set conditional breakpoint*.
+#. *Resume*. Click |resume| to continue execution, which stops immediately
+   at the same breakpoint. The ``delta_time`` value is much bigger. Why?
+   Because we were paused in the debugger and Arcade couldn't do the next
+   ``update`` call.
 
-#. *Shut up the breakpoints*.
+#. *Set conditional breakpoint*. Let's stop execution, but only when the
+   text is halfway across the screen. Right-click on the breakpoint
+   |breakpoint| image on line 18. In the ``Condition`` box, enter
+   ``self.position > 300`` and click ``Done`` to close the popup.
 
-#. *Clear all the breakpoints*.
+#. *Re-run*. Click the ``Debug`` window's re-run button |rerun| to stop
+   and restart the application.
 
-#. *Stop on exceptions*. Generate a problem by draw_text with ``y``
-   where ``message`` is.
+#. *Program runs, then stops*. The label moves across the screen a bit,
+   then the program stops and the debugger takes over. What's the value
+   of ``self.position``? Expand the triangle for ``self`` and take a look.
+   (Pro tip: zoom down through a long list by typing ``posi``.)
+
+#. *Resume*. Click |resume| and you'll see that execution immediately
+   stops again. ``self.position`` is now ``302``. Keep clicking
+   |resume| and watch the value go up.
+
+#. *Shut up the breakpoints*. Perhaps, for a moment, we don't want any
+   breakpoints in use. In the debug window, click mute breakpoints |mute|
+   to briefly turn them off. Click resume |resume| and the label starts
+   moving again. Turn off muting by clicking |mute| and execution
+   immediately stops.
+
+#. *Clear your breakpoints*. As your sleuthing, you can pile up breakpoints
+   and forget where they are. Click view breakpoints |view| to bring up
+   a dialog of all your set breakpoints. Select any breakpoints in
+   ``game.py``, then click the minus button and ``Done``. Your breakpoints
+   are gone.
+
+#. *Unhandled exception*. PyCharm has a built-in breakpoint to stop on all
+   unhandled exceptions. Let's put in an error on line 15, changing
+   ``message`` to ``y`` as the first ``draw_text`` argument.
+
+#. *Re-run*. Your code changed, so in the debug window, click re-run to
+   stop and restart.
+
+#. *Execution stops*. Deep in Arcade, in ``document.py``, we have a line
+   that fails because a string was expected (``message``) and we sent a
+   number (``y``).
+
+#. *Stop on Exceptions*. What controls this? Click view breakpoints |view|
+   and look at ``Any Exception`` under the ``Python Exception Breakpoint``
+   heading.
+
+#. *Terminate*. Click the red square |terminate| and close ``document.py``.
 
 What's Going On
 ===============
+
+
+.. |breakpoint| image:: ../images/db_set_breakpoint.png
+.. |view| image:: ../images/debug_view_breakpoints.gif
+.. |mute| image:: ../images/debug_mute_breakpoints.png
+.. |resume| image:: ../images/debug_resume.png
+.. |debug| image:: ../images/debug.png
+.. |terminate| image:: ../images/stop.gif
+.. |rerun| image:: ../images/stop_and_rerun.png

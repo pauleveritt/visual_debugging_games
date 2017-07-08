@@ -101,6 +101,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../conditional_breakpoints/index.html">Conditional Breakpoints and Animation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../basic_stepping/index.html">Basic Stepping and Players</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Enhanced Stepping and Motion</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#objectives">Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#steps">Steps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#what-s-going-on">What’s Going On</a></li>
 </ul>
@@ -178,10 +179,18 @@
   <div class="section" id="enhanced-stepping-and-motion">
 <h1>Enhanced Stepping and Motion<a class="headerlink" href="#enhanced-stepping-and-motion" title="Permalink to this headline">¶</a></h1>
 <p>We’ll make the Player sprite move to the right, and stop at the right edge.</p>
+<div class="section" id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Step out</li>
+<li>Only step through project code</li>
+<li>Run to cursor</li>
+</ul>
+</div>
 <div class="section" id="steps">
 <h2>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Stop the game, if it is running, and make sure you have no breakpoints
+<li><p class="first">Terminate the game, if it is running, and make sure you have no breakpoints
 set.</p>
 </li>
 <li><p class="first">Edit <code class="docutils literal"><span class="pre">game.py</span></code> to have the following:</p>
@@ -287,15 +296,29 @@ re-draw the player and move it <code class="docutils literal"><span class="pre">
 <li><p class="first"><em>Play the game</em>. Click the green debug button <img alt="debug" src="../_images/debug1.png" /> to run the game,
 with no breakpoints, to see it in action.</p>
 </li>
+<li><p class="first"><em>Close game</em>. Close the Arcade window to stop the game.</p>
+</li>
+<li><p class="first"><em>First breakpoint</em>. Put a breakpoint on line 38 (<code class="docutils literal"><span class="pre">game</span> <span class="pre">=</span> <span class="pre">MyGame</span></code>).</p>
+</li>
+<li><p class="first"><em>Debug game</em>. Click the debug button <img alt="debug" src="../_images/debug1.png" /> to run the game. It
+stops at that breakpoint.</p>
+</li>
+<li><p class="first"><em>Step into</em>. Click the step into button <img alt="stepinto" src="../_images/frames_step_into1.png" /> to go into
+the <code class="docutils literal"><span class="pre">MyGame</span></code> constructor.</p>
+</li>
+<li><p class="first"><em>Step out</em>. Click the step out button <img alt="stepout" src="../_images/frames_step_out.png" /> to leave the code
+that you stepped into, and go back to the point that called it
+(line 38).</p>
+</li>
+<li><p class="first"><em>Re-run</em>. Click the green re-run button <img alt="rerun" src="../_images/stop_and_rerun1.png" /> to restart the game
+and break at line 38.</p>
+</li>
+<li><p class="first"><em>Run to cursor</em>. Click somewhere in line 26 (the <code class="docutils literal"><span class="pre">append</span></code>) to put
+the cursor on that line. Now click the run to cursor button
+<img alt="runtocursor" src="../_images/frames_run_to_cursor.png" /> to continue executing until you reach that line.
+Execution stops there, just as if that line had a breakpoint.</p>
+</li>
 </ol>
-<ul class="simple">
-<li>Breakpoint in on_draw, raises exception, and…stops</li>
-<li>Same, but with bad image filename</li>
-<li>Disable python exception stopping</li>
-<li>Step into through __init__ goes into SptriteList, thus step through
-my code</li>
-<li>Run to cursor</li>
-</ul>
 </div>
 <div class="section" id="what-s-going-on">
 <h2>What’s Going On<a class="headerlink" href="#what-s-going-on" title="Permalink to this headline">¶</a></h2>

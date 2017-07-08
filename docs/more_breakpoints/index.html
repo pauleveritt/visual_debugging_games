@@ -193,6 +193,8 @@
 <div class="section" id="steps">
 <h2>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
+<li><p class="first">Terminate the game, if it is running.</p>
+</li>
 <li><p class="first">Edit <code class="docutils literal"><span class="pre">game.py</span></code> to have the following:</p>
 <div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -249,36 +251,36 @@ second, to perform graphics operations.</li>
 want to test the <code class="docutils literal"><span class="pre">main</span></code> function.)</li>
 </ul>
 </li>
-<li><p class="first"><em>Clear breakpoint</em>. If you still have a red circle from the previous
-step, click on it to remove the breakpoint.</p>
+<li><p class="first"><em>Clear breakpoint</em>. If you still have a red circle <img alt="breakpoint" src="../_images/db_set_breakpoint3.png" />
+from the previous step, click on it to remove the breakpoint.</p>
 </li>
 <li><p class="first"><em>Break in the constructor</em>. Click in the gutter on line 8
-(<code class="docutils literal"><span class="pre">self.title</span></code>) to set a breakpoint on that line.</p>
+(<code class="docutils literal"><span class="pre">self.title</span></code>) to set a breakpoint <img alt="breakpoint" src="../_images/db_set_breakpoint3.png" /> on that line.</p>
 </li>
-<li><p class="first"><em>Re-run debugger</em>. In the Debug window, click the green circle with
-an arrow to restart the debugger.</p>
+<li><p class="first"><em>Re-run debugger</em>. In the Debug window, click the green bug
+<img alt="debug" src="../_images/debug2.png" /> to restart the debugger.</p>
 </li>
 <li><p class="first"><em>Inspect variables</em>. Execution stops in the <code class="docutils literal"><span class="pre">MyGame</span></code> constructor. You
 can see that <code class="docutils literal"><span class="pre">title</span></code>, <code class="docutils literal"><span class="pre">self</span></code>, and more are defined. Click the
 triangle beside <code class="docutils literal"><span class="pre">self</span></code> to see the attributes on the instance.</p>
 </li>
-<li><p class="first"><em>Resume Program</em>. Click the “moving” green arrow in the debug window to
-resume the program. It is past the one break point, so everything is
-running as normal.</p>
+<li><p class="first"><em>Resume Program</em>. Click the “moving” green arrow <img alt="resume" src="../_images/debug_resume1.png" /> in the
+debug window to resume execution. It is past the one break point,
+so everything is running as normal.</p>
 </li>
 <li><p class="first"><em>Set second breakpoint</em>. Click in the left gutter beside line 12
 (<code class="docutils literal"><span class="pre">arcade.draw_text</span></code>). Execution stops, on that line. Now, only
 <code class="docutils literal"><span class="pre">self</span></code> is in scope.</p>
 </li>
-<li><p class="first"><em>Resume Program</em>. Click the moving green arrow to resume execution. It
-stops immediately again.</p>
+<li><p class="first"><em>Resume Program</em>. Click <img alt="resume" src="../_images/debug_resume1.png" /> to resume execution. It stops
+immediately again.</p>
 </li>
-<li><p class="first"><em>Clear and resume</em>. Click the red circle beside line 12 to clear that
-breakpoint. Then, click the moving green arrow to resume execution. This
-time, it doesn’t stop for execution.</p>
+<li><p class="first"><em>Clear and resume</em>. Click the red circle <img alt="breakpoint" src="../_images/db_set_breakpoint3.png" /> beside line 12
+to clear that breakpoint. Then, click the moving green arrow <img alt="resume" src="../_images/debug_resume1.png" />
+to resume execution. This time, it doesn’t stop for execution.</p>
 </li>
 <li><p class="first"><em>Close the game</em>. Either close the Arcade window or click the red square
-to terminate execution.</p>
+<img alt="terminate" src="../_images/stop4.gif" /> to terminate execution.</p>
 </li>
 </ol>
 </div>

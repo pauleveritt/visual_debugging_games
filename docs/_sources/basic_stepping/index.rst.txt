@@ -12,8 +12,8 @@ Objectives
 Steps
 =====
 
-#. Stop the game, if it is running, and make sure you have no breakpoints
-   set.
+#. Terminate the game, if it is running, and make sure you have no
+   breakpoints set.
 
 #. Edit ``game.py`` to have the following:
 

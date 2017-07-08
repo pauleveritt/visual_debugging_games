@@ -28,18 +28,22 @@ Steps
 
    - *Line 10*. Change the main block to call this main function.
 
-#. Click the green arrow on line 9 (the ``if __name__`` line) and choose
-   ``Debug``.
+#. *Debug*. Click the green arrow |run| on line 9 (the ``if __name__``
+   line) and choose ``Debug 'game'``.
 
 #. A new window appears. It's our "game"!
 
-#. Close the Arcade window.
+#. *Close*. Close the Arcade window.
 
-#. Click the green arrow again and choose ``Debug`` again.
+#. *Re-run*. Click the green arrow again and choose ``Debug`` again.
 
-#. This time, kill the debugging session by clicking the red square in
-   the left of the ``Debug`` window. *Note: If it turns into a skull, that
-   means the process isn't really dead yet, so click it again.*
+#. *Terminate*. This time, kill the debugging session by clicking the red
+   square |terminate| in the left of the ``Debug`` window.
+
+   .. note::
+
+      If the terminate button |terminate| turns into a skull, that means
+      the process isn't really dead yet, so click it again.
 
 What's Going On
 ===============
@@ -49,3 +53,6 @@ What's Going On
 - Cython speedups
 
 - pyglet window in another window
+
+.. |run| image:: ../images/run.png
+.. |terminate| image:: ../images/stop.gif

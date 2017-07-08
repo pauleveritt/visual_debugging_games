@@ -182,6 +182,9 @@
 <div class="section" id="steps">
 <h2>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
+<li><p class="first">Terminate the game, if it is running, and make sure you have no breakpoints
+set.</p>
+</li>
 <li><p class="first">Edit <code class="docutils literal"><span class="pre">game.py</span></code> to have the following:</p>
 <div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
   2
@@ -342,14 +345,14 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">coins</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">coin</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">coin</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
-
+<span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+</span>
     <span class="k">def</span> <span class="nf">on_draw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">arcade</span><span class="o">.</span><span class="n">start_render</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
-        <span class="n">score_text</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;Score: {self.score:02}&#39;</span>
-        <span class="n">arcade</span><span class="o">.</span><span class="n">draw_text</span><span class="p">(</span><span class="n">score_text</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">arcade</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">BLACK</span><span class="p">)</span>
-
+<span class="hll">        <span class="n">score_text</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;Score: {self.score:02}&#39;</span>
+</span><span class="hll">        <span class="n">arcade</span><span class="o">.</span><span class="n">draw_text</span><span class="p">(</span><span class="n">score_text</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">arcade</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">BLACK</span><span class="p">)</span>
+</span>
     <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">delta_time</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
 
@@ -357,8 +360,8 @@
                                                         <span class="bp">self</span><span class="o">.</span><span class="n">coins</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">coin</span> <span class="ow">in</span> <span class="n">hit_list</span><span class="p">:</span>
             <span class="n">coin</span><span class="o">.</span><span class="n">kill</span><span class="p">()</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="mi">1</span>
-
+<span class="hll">            <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="mi">1</span>
+</span>
     <span class="k">def</span> <span class="nf">on_key_press</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">modifiers</span><span class="p">):</span>
 
         <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">arcade</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">UP</span><span class="p">:</span>
@@ -386,6 +389,12 @@
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </td></tr></table></div>
+<ul class="simple">
+<li><em>Line 60</em>. We’re keeping score, so start at zero.</li>
+<li><em>Lines 65-66</em>. Display the current score, during <code class="docutils literal"><span class="pre">on_draw</span></code>, using
+a Python 3.5 f-string.</li>
+<li><em>Line 75</em>. Whenever you kill a coin, increase the score.</li>
+</ul>
 </li>
 </ol>
 </div>

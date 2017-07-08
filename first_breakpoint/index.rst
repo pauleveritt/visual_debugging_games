@@ -16,6 +16,8 @@ Objectives
 Steps
 =====
 
+#. Terminate the game, if it is running.
+
 #. Edit ``game.py`` to have the following:
 
    .. literalinclude:: game.py
@@ -35,9 +37,9 @@ Steps
    to the left of the the code and choose ``Show Line Number``.
 
 #. *Set breakpoint*. Click in the gutter area to the left of line 8, causing
-   a red circle to appear. This is called a *breakpoint*.
+   a red circle |breakpoint| to appear. This is called a *breakpoint*.
 
-#. *Debug*. Click the green play button on line 13 and choose ``Debug``.
+#. *Debug*. Click the green play |run| button on line 13 and choose ``Debug``.
 
 #. *Inspect variables*. Python execution stops at the line with the breakpoint
    and shows you the available variables in the debugger. Nothing is in scope,
@@ -47,8 +49,8 @@ Steps
    green "moving" arrow in the debug panel. When you mouseover, it will say
    ``Resume Program``.
 
-#. *Exit*. Quit the program, either by closing the Arcade window or by
-   clicking the red square in the debugger.
+#. *Terminate*. Quit the program, either by closing the Arcade window or by
+   clicking the red square |terminate| in the debugger.
 
 What's Going On
 ===============
@@ -56,3 +58,8 @@ What's Going On
 - What are the arguments? Mouse over and quick preview
 
 - Experiment with defining a variable before the breakpoint
+
+.. |breakpoint| image:: ../images/db_set_breakpoint.png
+.. |run| image:: ../images/run.png
+.. |resume| image:: ../images/debug_resume.png
+.. |terminate| image:: ../images/stop.gif

@@ -15,33 +15,42 @@ setup correctly. Let's write a tiny program to ensure that:
     src="https://www.youtube.com/embed/d3NxblctHJI"
     frameborder="0" allowfullscreen="1">&nbsp;</iframe>
 
+Objectives
+==========
+
+- Install Arcade
+
+- Run a simple non-Arcade program
+
 Steps
 =====
 
-#. Make sure you have the ``arcade_tutorial`` project open in PyCharm.
+#. *Project*. Make sure you have the ``arcade_tutorial`` project open in
+   PyCharm.
 
-#. In the PyCharm menu, choose ``File -> New -> Python File``, then name
-   file ``game.py``.
+#. *New file*. In the PyCharm menu, choose ``File -> New -> Python File``,
+   then name file ``game.py``.
 
-#. In the new file, enter the following:
+#. *Code*. In the new file contents, enter the following:
 
    .. literalinclude:: game.py
         :language: python
         :linenos:
 
-#. Right-click in the middle of the file and choose ``Run 'game'``.
+#. *Run*. On line 9, in the left gutter, click the green run arrow |run| and
+   choose ``Run 'game'``.
 
-#. A panel should appear at the bottom with an error message -- we
+#. *Error*. A panel should appear at the bottom with an error message -- we
    haven't installed ``arcade`` yet into this virtual environment!
 
-#. Click on the red-squigly line for ``arcade`` on line one, then click on
-   the red light bulb that pops up.
+#. *Install*. Click on the red-squigly line for ``arcade`` on line one, then
+   click on the red light bulb that pops up. Choose the
+   ``Install package arcade`` menu item.
 
-#. Choose the ``Install package arcade`` menu item.
+#. *Run*. Once installed, click the green play button |run| (either on line 9
+   or in the ``Run`` tool window) to re-run our program.
 
-#. Once installed, click the green play button to re-run our program.
-
-#. You now see, in the ``Run`` window, the version number.
+#. *Output*. You now see, in the ``Run`` window, the version number.
 
 What's Going On
 ===============
@@ -56,3 +65,5 @@ along the way. For example, the output went to a nice output window.
 But we had a problem the first time: the Arcade library isn't installed.
 PyCharm offered to install this Python package into this project's
 virtual environment.
+
+.. |run| image:: ../images/run.png
