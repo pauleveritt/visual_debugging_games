@@ -183,6 +183,9 @@
 <div class="section" id="steps">
 <h2>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
+<li><p class="first">Stop the game, if it is running, and make sure you have no breakpoints
+set.</p>
+</li>
 <li><p class="first">Edit <code class="docutils literal"><span class="pre">game.py</span></code> to have the following:</p>
 <div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -273,8 +276,8 @@
 <span class="n">SCREEN_HEIGHT</span> <span class="o">=</span> <span class="mi">600</span>
 <span class="n">MOVEMENT_SPEED</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">GRAVITY</span> <span class="o">=</span> <span class="mf">0.3</span>
-<span class="n">BOUNCINESS</span> <span class="o">=</span> <span class="mf">0.5</span>
-
+<span class="hll"><span class="n">BOUNCINESS</span> <span class="o">=</span> <span class="mf">0.5</span>
+</span>
 
 <span class="k">class</span> <span class="nc">Coin</span><span class="p">(</span><span class="n">arcade</span><span class="o">.</span><span class="n">Sprite</span><span class="p">):</span>
     <span class="k">pass</span>
@@ -293,9 +296,9 @@
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">bottom</span> <span class="o">=</span> <span class="mi">0</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">change_y</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">change_y</span> <span class="o">*=</span> <span class="o">-</span><span class="n">BOUNCINESS</span>
-        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">&gt;</span> <span class="n">SCREEN_HEIGHT</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+<span class="hll">            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">change_y</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span class="hll">                <span class="bp">self</span><span class="o">.</span><span class="n">change_y</span> <span class="o">*=</span> <span class="o">-</span><span class="n">BOUNCINESS</span>
+</span>        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">&gt;</span> <span class="n">SCREEN_HEIGHT</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">=</span> <span class="n">SCREEN_HEIGHT</span> <span class="o">-</span> <span class="mi">1</span>
 
 
@@ -349,6 +352,12 @@
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </td></tr></table></div>
+<ul class="simple">
+<li><em>Line 9</em>. Add a constant to control how much to “bounce” when
+hitting the bottom.</li>
+<li><em>Line 29-30</em>. If you go past the bottom, apply some bounciness to
+the Y position until your change in Y reaches 0.</li>
+</ul>
 </li>
 </ol>
 </div>
