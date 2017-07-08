@@ -183,6 +183,9 @@
 <div class="section" id="steps">
 <h2>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
+<li><p class="first">Stop the game, if it is running, and make sure you have no breakpoints
+set.</p>
+</li>
 <li><p class="first">Edit <code class="docutils literal"><span class="pre">game.py</span></code> to have the following:</p>
 <div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -330,13 +333,13 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span> <span class="o">=</span> <span class="n">arcade</span><span class="o">.</span><span class="n">SpriteList</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">coins</span> <span class="o">=</span> <span class="n">arcade</span><span class="o">.</span><span class="n">SpriteList</span><span class="p">()</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+<span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">coins</span> <span class="o">=</span> <span class="n">arcade</span><span class="o">.</span><span class="n">SpriteList</span><span class="p">()</span>
+</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
             <span class="n">coin</span> <span class="o">=</span> <span class="n">Coin</span><span class="p">(</span><span class="s1">&#39;coin.png&#39;</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
             <span class="n">coin</span><span class="o">.</span><span class="n">center_x</span> <span class="o">=</span> <span class="n">randrange</span><span class="p">(</span><span class="n">SCREEN_WIDTH</span><span class="p">)</span>
             <span class="n">coin</span><span class="o">.</span><span class="n">center_y</span> <span class="o">=</span> <span class="n">randrange</span><span class="p">(</span><span class="n">SCREEN_HEIGHT</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">coins</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">coin</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">coin</span><span class="p">)</span>
+<span class="hll">            <span class="bp">self</span><span class="o">.</span><span class="n">coins</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">coin</span><span class="p">)</span>
+</span>            <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">coin</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">on_draw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">arcade</span><span class="o">.</span><span class="n">start_render</span><span class="p">()</span>
@@ -345,11 +348,11 @@
     <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">delta_time</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
 
-        <span class="n">hit_list</span> <span class="o">=</span> <span class="n">arcade</span><span class="o">.</span><span class="n">check_for_collision_with_list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="p">,</span>
-                                                        <span class="bp">self</span><span class="o">.</span><span class="n">coins</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">coin</span> <span class="ow">in</span> <span class="n">hit_list</span><span class="p">:</span>
-            <span class="n">coin</span><span class="o">.</span><span class="n">kill</span><span class="p">()</span>
-
+<span class="hll">        <span class="n">hit_list</span> <span class="o">=</span> <span class="n">arcade</span><span class="o">.</span><span class="n">check_for_collision_with_list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="p">,</span>
+</span><span class="hll">                                                        <span class="bp">self</span><span class="o">.</span><span class="n">coins</span><span class="p">)</span>
+</span><span class="hll">        <span class="k">for</span> <span class="n">coin</span> <span class="ow">in</span> <span class="n">hit_list</span><span class="p">:</span>
+</span><span class="hll">            <span class="n">coin</span><span class="o">.</span><span class="n">kill</span><span class="p">()</span>
+</span>
     <span class="k">def</span> <span class="nf">on_key_press</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">modifiers</span><span class="p">):</span>
 
         <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">arcade</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">UP</span><span class="p">:</span>
@@ -377,6 +380,15 @@
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </td></tr></table></div>
+<ul class="simple">
+<li><em>Line 52</em>. As we see next, we also want to keep a sprite list of just
+for coins.</li>
+<li><em>Line 57</em>. Add this coin to the coin list.</li>
+<li><em>Line 67-68</em>. Arcade makes it easy to find which sprites overlap with
+a certain sprite. <code class="docutils literal"><span class="pre">hit_list</span></code> is thus, which coins collided with the
+player.</li>
+<li><em>Line 69-70</em>. Kill each of the colliding coins.</li>
+</ul>
 </li>
 </ol>
 </div>
