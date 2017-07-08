@@ -180,7 +180,7 @@
 <div class="section" id="steps">
 <h2>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Edit <code class="docutils literal"><span class="pre">game.py</span></code> to have the following:s</p>
+<li><p class="first">Edit <code class="docutils literal"><span class="pre">game.py</span></code> to have the following:</p>
 <div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -224,8 +224,7 @@
 41
 42
 43
-44
-45</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">arcade</span>
+44</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">arcade</span>
 
 <span class="n">SCREEN_WIDTH</span> <span class="o">=</span> <span class="mi">600</span>
 <span class="n">SCREEN_HEIGHT</span> <span class="o">=</span> <span class="mi">600</span>
@@ -233,7 +232,6 @@
 
 
 <span class="k">class</span> <span class="nc">Player</span><span class="p">(</span><span class="n">arcade</span><span class="o">.</span><span class="n">Sprite</span><span class="p">):</span>
-
     <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">center_x</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">change_x</span>
 
@@ -248,7 +246,7 @@
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">title</span><span class="p">)</span>
         <span class="n">arcade</span><span class="o">.</span><span class="n">set_background_color</span><span class="p">(</span><span class="n">arcade</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">WHEAT</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">player</span> <span class="o">=</span> <span class="n">Player</span><span class="p">(</span><span class="s1">&#39;../images/player.png&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">player</span> <span class="o">=</span> <span class="n">Player</span><span class="p">(</span><span class="s1">&#39;player.png&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">center_y</span> <span class="o">=</span> <span class="mi">20</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span> <span class="o">=</span> <span class="n">arcade</span><span class="o">.</span><span class="n">SpriteList</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="p">)</span>
@@ -274,6 +272,14 @@
 </td></tr></table></div>
 </li>
 </ol>
+<ul class="simple">
+<li>Breakpoint in on_draw, raises exception, and…stops</li>
+<li>Same, but with bad image filename</li>
+<li>Disable python exception stopping</li>
+<li>Step into through __init__ goes into SptriteList, thus step through
+my code</li>
+<li>Run to cursor</li>
+</ul>
 </div>
 <div class="section" id="what-s-going-on">
 <h2>What’s Going On<a class="headerlink" href="#what-s-going-on" title="Permalink to this headline">¶</a></h2>

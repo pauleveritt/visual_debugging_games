@@ -12,7 +12,7 @@ Watches and Keypresses
 Steps
 =====
 
-#. Edit ``game.py`` to have the following:s
+#. Edit ``game.py`` to have the following:
 
    .. literalinclude:: game.py
         :language: python

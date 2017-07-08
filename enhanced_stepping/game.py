@@ -6,7 +6,6 @@ MOVEMENT_SPEED = 5
 
 
 class Player(arcade.Sprite):
-
     def update(self):
         self.center_x += self.change_x
 

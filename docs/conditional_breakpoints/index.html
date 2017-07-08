@@ -99,6 +99,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../first_breakpoint/index.html">First Breakpoints and Drawing Text</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../more_breakpoints/index.html">More Breakpoints and Class-Based Games</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Conditional Breakpoints and Animation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#objectives">Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#steps">Steps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#what-s-going-on">What’s Going On</a></li>
 </ul>
@@ -177,24 +178,25 @@
             
   <div class="section" id="conditional-breakpoints-and-animation">
 <h1>Conditional Breakpoints and Animation<a class="headerlink" href="#conditional-breakpoints-and-animation" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li>Conditional BP to solve startup</li>
-<li>Stop on exception (perhaps draw_text with y instead of message?)</li>
-<li>Investigate the f-string</li>
-<li>Manage all breakpoints</li>
-<li>Shut up all breakpoints</li>
-<li>What’s up with the delta_time argument?</li>
-</ul>
 <p>Game:</p>
 <ul class="simple">
 <li>Set an initial position</li>
 <li>Change the string being displayed</li>
 <li>Implement animation via Arcade’s <code class="docutils literal"><span class="pre">update</span></code> method</li>
 </ul>
+<div class="section" id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Conditional breakpoints</li>
+<li>Suspend all breakpoints</li>
+<li>Clear all breakpoints</li>
+<li>Break on exceptions</li>
+</ul>
+</div>
 <div class="section" id="steps">
 <h2>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Edit <code class="docutils literal"><span class="pre">game.py</span></code> to have the following:s</p>
+<li><p class="first">Edit <code class="docutils literal"><span class="pre">game.py</span></code> to have the following:</p>
 <div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -260,10 +262,25 @@ let’s initialize it with a starting position.</li>
 the middle of the screen. Note that this is going to change every time
 line 18 updates the position.</li>
 <li><em>Line 18</em>. Move the position one pixel to the right. This gets called
-“a lot” by Arcade (where “a lot” can be configured.)</li>
+“a lot” by Arcade (where “a lot” can be configured.) <code class="docutils literal"><span class="pre">delta_time</span></code> is
+how long it has been since <code class="docutils literal"><span class="pre">update</span></code> was last called.</li>
 </ul>
 </li>
-<li></li>
+<li><p class="first"><em>Run under debugger</em>. Make sure there are no breakpoints and click the
+green button (either on line 27 or in the debug window) to run it
+under the debugger, just to see what it looks like.</p>
+</li>
+<li><p class="first"><em>Set first breakpoint</em>. Investigate the delta_time.</p>
+</li>
+<li><p class="first"><em>Set conditional breakpoint</em>.</p>
+</li>
+<li><p class="first"><em>Shut up the breakpoints</em>.</p>
+</li>
+<li><p class="first"><em>Clear all the breakpoints</em>.</p>
+</li>
+<li><p class="first"><em>Stop on exceptions</em>. Generate a problem by draw_text with <code class="docutils literal"><span class="pre">y</span></code>
+where <code class="docutils literal"><span class="pre">message</span></code> is.</p>
+</li>
 </ol>
 </div>
 <div class="section" id="what-s-going-on">

@@ -100,6 +100,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../more_breakpoints/index.html">More Breakpoints and Class-Based Games</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../conditional_breakpoints/index.html">Conditional Breakpoints and Animation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Basic Stepping and Players</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#objectives">Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#steps">Steps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#what-s-going-on">What’s Going On</a></li>
 </ul>
@@ -177,20 +178,20 @@
             
   <div class="section" id="basic-stepping-and-players">
 <h1>Basic Stepping and Players<a class="headerlink" href="#basic-stepping-and-players" title="Permalink to this headline">¶</a></h1>
+<p>TODO Ensure that every step ends with, and starts with, “Terminate”</p>
+<div class="section" id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Investigate the f-string by changing self.position, then stepping over</li>
+<li>Step over, into, and out of code</li>
 </ul>
+</div>
 <div class="section" id="steps">
 <h2>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Make the image available for download</li>
-<li>Delete __init__ storing position and title</li>
-<li>Player class</li>
-<li>Make instance of Player in __init__ and add to sprites list</li>
-<li>One line in on_draw and update</li>
-</ul>
 <ol class="arabic">
-<li><p class="first">Edit <code class="docutils literal"><span class="pre">game.py</span></code> to have the following:s</p>
+<li><p class="first">Stop the game, if it is running, and make sure you have no breakpoints
+set.</p>
+</li>
+<li><p class="first">Edit <code class="docutils literal"><span class="pre">game.py</span></code> to have the following:</p>
 <div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -227,30 +228,30 @@
 34
 35</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">arcade</span>
 
-<span class="n">SCREEN_WIDTH</span> <span class="o">=</span> <span class="mi">600</span>
-<span class="n">SCREEN_HEIGHT</span> <span class="o">=</span> <span class="mi">600</span>
+<span class="hll"><span class="n">SCREEN_WIDTH</span> <span class="o">=</span> <span class="mi">600</span>
+</span><span class="hll"><span class="n">SCREEN_HEIGHT</span> <span class="o">=</span> <span class="mi">600</span>
+</span>
 
-
-<span class="k">class</span> <span class="nc">Player</span><span class="p">(</span><span class="n">arcade</span><span class="o">.</span><span class="n">Sprite</span><span class="p">):</span>
-    <span class="k">pass</span>
-
+<span class="hll"><span class="k">class</span> <span class="nc">Player</span><span class="p">(</span><span class="n">arcade</span><span class="o">.</span><span class="n">Sprite</span><span class="p">):</span>
+</span><span class="hll">    <span class="k">pass</span>
+</span>
 
 <span class="k">class</span> <span class="nc">MyGame</span><span class="p">(</span><span class="n">arcade</span><span class="o">.</span><span class="n">Window</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">title</span><span class="p">)</span>
         <span class="n">arcade</span><span class="o">.</span><span class="n">set_background_color</span><span class="p">(</span><span class="n">arcade</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">WHEAT</span><span class="p">)</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">player</span> <span class="o">=</span> <span class="n">Player</span><span class="p">(</span><span class="s1">&#39;../images/player.png&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span> <span class="o">=</span> <span class="n">arcade</span><span class="o">.</span><span class="n">SpriteList</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">on_draw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">arcade</span><span class="o">.</span><span class="n">start_render</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
-
+<span class="hll">
+</span><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">player</span> <span class="o">=</span> <span class="n">Player</span><span class="p">(</span><span class="s1">&#39;player.png&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+</span><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span> <span class="o">=</span> <span class="n">arcade</span><span class="o">.</span><span class="n">SpriteList</span><span class="p">()</span>
+</span><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="p">)</span>
+</span>
+<span class="hll">    <span class="k">def</span> <span class="nf">on_draw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span>        <span class="n">arcade</span><span class="o">.</span><span class="n">start_render</span><span class="p">()</span>
+<span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</span>
     <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">delta_time</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
-
+<span class="hll">        <span class="k">pass</span>
+</span>
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">game</span> <span class="o">=</span> <span class="n">MyGame</span><span class="p">(</span><span class="n">SCREEN_WIDTH</span><span class="p">,</span> <span class="n">SCREEN_HEIGHT</span><span class="p">,</span> <span class="s1">&#39;Coin Game&#39;</span><span class="p">)</span>
@@ -262,8 +263,60 @@
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </td></tr></table></div>
+<ul class="simple">
+<li><em>Lines 3-4</em>. Let’s start defining some game-wide constants.</li>
+<li><em>Line 7-8</em>. We are going to start defining a “player”, using the
+sprite base class.</li>
+<li><em>Line 15</em>. Note that we removed the initialization of <code class="docutils literal"><span class="pre">self.title</span></code>
+and <code class="docutils literal"><span class="pre">self.position</span></code>.</li>
+<li><em>Lines 16-18</em>. Make an instance of our Player sprite, initialize our
+little database of sprites, and add the player to it.</li>
+<li><em>Line 20</em>. Our <code class="docutils literal"><span class="pre">on_draw</span></code> is no longer interested in f-strings and
+putting a label of text on the screen.</li>
+<li><em>Line 22</em>. When Arcade wants to draw/redraw, have it draw all of our
+sprites.</li>
+<li><em>Line 25</em>. Later we’ll have our sprites do some updating of their
+positions.</li>
+</ul>
+</li>
+<li><p class="first"><em>Image</em>. Download this image and save it as <code class="docutils literal"><span class="pre">player.png</span></code> beside the
+<code class="docutils literal"><span class="pre">game.py</span></code> file:</p>
+<img alt="../_images/player.png" src="../_images/player.png" />
+</li>
+<li><p class="first"><em>First breakpoint</em>. Put a breakpoint on line 35, the <code class="docutils literal"><span class="pre">main()</span></code> call
+in the main block.</p>
+</li>
+<li><p class="first"><em>Debug</em>. Click the green button <img alt="debug" src="../_images/debug.png" /> to start debugging the game.</p>
+</li>
+<li><p class="first"><em>Step Into</em>. Click the <img alt="stepinto" src="../_images/frames_step_into.png" /> button to move execution into the
+calling of <code class="docutils literal"><span class="pre">main</span></code>.</p>
+</li>
+<li><p class="first"><em>Step Over</em>. Click the <img alt="stepover" src="../_images/frames_step_over.png" /> button twice, moving through and
+out of <code class="docutils literal"><span class="pre">main</span></code>.</p>
+</li>
+<li><p class="first">Click the red terminate button <img alt="terminate" src="../_images/stop.gif" /> to kill the program.</p>
 </li>
 </ol>
+<p>We just stopped at a breakpoint, stepped <em>into</em> the main function, and
+then stepped through some code until execution continued past our
+breakpoint. This time, let’s step into our game.</p>
+<ol class="arabic simple">
+<li><em>Re-run</em>. Click the green <img alt="debug" src="../_images/debug.png" /> button to debug and stop at the
+same breakpoint.</li>
+<li><em>Step Into</em>. Click the step into <img alt="stepinto" src="../_images/frames_step_into.png" /> button to move to line
+29, then click <img alt="stepinto" src="../_images/frames_step_into.png" /> <em>again</em> to move into the <code class="docutils literal"><span class="pre">MyGame</span></code>
+constructor. You should now be on line 13 (<code class="docutils literal"><span class="pre">super()</span></code>).</li>
+<li><em>Step Into</em>. Click <img alt="stepinto" src="../_images/frames_step_into.png" /> one more time. This opens a new file,
+Arcade’s <code class="docutils literal"><span class="pre">application.py</span></code>, which as the superclass which we just
+called.</li>
+<li><em>Terminate</em>. Click <img alt="terminate" src="../_images/stop.gif" /> to quit the program.</li>
+<li><em>Close tab</em>. Close the <code class="docutils literal"><span class="pre">application.py</span></code> tab.</li>
+</ol>
+<ul class="simple">
+<li>First, breakpoint on main(), then step into, step over until return</li>
+<li>Same, but step into MyGame, step over</li>
+<li></li>
+</ul>
 </div>
 <div class="section" id="what-s-going-on">
 <h2>What’s Going On<a class="headerlink" href="#what-s-going-on" title="Permalink to this headline">¶</a></h2>

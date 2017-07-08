@@ -22,7 +22,7 @@ class MyGame(arcade.Window):
         self.all_sprites_list.draw()
 
     def update(self, delta_time):
-        self.all_sprites_list.update()
+        pass
 
 
 def main():

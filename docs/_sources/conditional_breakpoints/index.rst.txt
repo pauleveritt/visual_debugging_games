@@ -2,17 +2,6 @@
 Conditional Breakpoints and Animation
 =====================================
 
-- Conditional BP to solve startup
-
-- Stop on exception (perhaps draw_text with y instead of message?)
-
-- Investigate the f-string
-
-- Manage all breakpoints
-
-- Shut up all breakpoints
-
-- What's up with the delta_time argument?
 
 Game:
 
@@ -22,10 +11,21 @@ Game:
 
 - Implement animation via Arcade's ``update`` method
 
+Objectives
+==========
+
+- Conditional breakpoints
+
+- Suspend all breakpoints
+
+- Clear all breakpoints
+
+- Break on exceptions
+
 Steps
 =====
 
-#. Edit ``game.py`` to have the following:s
+#. Edit ``game.py`` to have the following:
 
    .. literalinclude:: game.py
         :language: python
@@ -42,9 +42,23 @@ Steps
      line 18 updates the position.
 
    - *Line 18*. Move the position one pixel to the right. This gets called
-     "a lot" by Arcade (where "a lot" can be configured.)
+     "a lot" by Arcade (where "a lot" can be configured.) ``delta_time`` is
+     how long it has been since ``update`` was last called.
 
-#.
+#. *Run under debugger*. Make sure there are no breakpoints and click the
+   green button (either on line 27 or in the debug window) to run it
+   under the debugger, just to see what it looks like.
+
+#. *Set first breakpoint*. Investigate the delta_time.
+
+#. *Set conditional breakpoint*.
+
+#. *Shut up the breakpoints*.
+
+#. *Clear all the breakpoints*.
+
+#. *Stop on exceptions*. Generate a problem by draw_text with ``y``
+   where ``message`` is.
 
 What's Going On
 ===============

@@ -7,13 +7,23 @@ Enhanced Stepping and Motion
 Steps
 =====
 
-#. Edit ``game.py`` to have the following:s
+#. Edit ``game.py`` to have the following:
 
    .. literalinclude:: game.py
         :language: python
         :linenos:
 
 
+- Breakpoint in on_draw, raises exception, and...stops
+
+- Same, but with bad image filename
+
+- Disable python exception stopping
+
+- Step into through __init__ goes into SptriteList, thus step through
+  my code
+
+- Run to cursor
 
 What's Going On
 ===============
