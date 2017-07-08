@@ -26,6 +26,10 @@ Steps
    - *Lines 42-46*. Make 20 coins and put them in a random x/y position,
      then append them to the ``all_sprites`` list.
 
+#. *Download coin image*. Download this image and save it as ``coin.png``:
+
+   .. image:: coin.png
+      :scale: 50%
 
 What's Going On
 ===============

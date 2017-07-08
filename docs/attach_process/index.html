@@ -272,9 +272,7 @@
 86
 87
 88
-89
-90
-91</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randrange</span><span class="p">,</span> <span class="n">choice</span>
+89</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randrange</span><span class="p">,</span> <span class="n">choice</span>
 
 <span class="kn">import</span> <span class="nn">arcade</span>
 
@@ -325,12 +323,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span> <span class="o">=</span> <span class="n">arcade</span><span class="o">.</span><span class="n">SpriteList</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">coin_list</span> <span class="o">=</span> <span class="n">arcade</span><span class="o">.</span><span class="n">SpriteList</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
             <span class="n">coin</span> <span class="o">=</span> <span class="n">Coin</span><span class="p">(</span><span class="s1">&#39;coin.png&#39;</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
             <span class="n">coin</span><span class="o">.</span><span class="n">center_x</span> <span class="o">=</span> <span class="n">randrange</span><span class="p">(</span><span class="n">SCREEN_WIDTH</span><span class="p">)</span>
             <span class="n">coin</span><span class="o">.</span><span class="n">center_y</span> <span class="o">=</span> <span class="n">randrange</span><span class="p">(</span><span class="n">SCREEN_HEIGHT</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">coin_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">coin</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">coin</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">on_draw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>

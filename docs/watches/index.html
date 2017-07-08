@@ -177,6 +177,8 @@
             
   <div class="section" id="watches-and-keypresses">
 <h1>Watches and Keypresses<a class="headerlink" href="#watches-and-keypresses" title="Permalink to this headline">¶</a></h1>
+<p>Instead of moving on its own, our player will move right/left only when
+we press the right/left arrow key.</p>
 <ul class="simple">
 <li>keypress handling to change left/right</li>
 <li>keyhold to move, keyrelease to stop</li>
@@ -185,6 +187,9 @@
 <div class="section" id="steps">
 <h2>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
+<li><p class="first">Stop the game, if it is running, and make sure you have no breakpoints
+set.</p>
+</li>
 <li><p class="first">Edit <code class="docutils literal"><span class="pre">game.py</span></code> to have the following:</p>
 <div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -276,24 +281,24 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">delta_time</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
-
-    <span class="k">def</span> <span class="nf">on_key_press</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">modifiers</span><span class="p">):</span>
-
-        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">arcade</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">UP</span><span class="p">:</span>
-            <span class="k">pass</span>
-        <span class="k">elif</span> <span class="n">key</span> <span class="o">==</span> <span class="n">arcade</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">LEFT</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">change_x</span> <span class="o">=</span> <span class="o">-</span><span class="n">MOVEMENT_SPEED</span>
-        <span class="k">elif</span> <span class="n">key</span> <span class="o">==</span> <span class="n">arcade</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">change_x</span> <span class="o">=</span> <span class="n">MOVEMENT_SPEED</span>
-
-    <span class="k">def</span> <span class="nf">on_key_release</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">modifiers</span><span class="p">):</span>
-
-        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">arcade</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">UP</span><span class="p">:</span>
-            <span class="k">pass</span>
-        <span class="k">elif</span> <span class="n">key</span> <span class="o">==</span> <span class="n">arcade</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">LEFT</span> <span class="ow">or</span> <span class="n">key</span> <span class="o">==</span> <span class="n">arcade</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">change_x</span> <span class="o">=</span> <span class="mi">0</span>
-
+<span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+</span>
+<span class="hll">    <span class="k">def</span> <span class="nf">on_key_press</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">modifiers</span><span class="p">):</span>
+</span><span class="hll">
+</span><span class="hll">        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">arcade</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">UP</span><span class="p">:</span>
+</span><span class="hll">            <span class="k">pass</span>
+</span><span class="hll">        <span class="k">elif</span> <span class="n">key</span> <span class="o">==</span> <span class="n">arcade</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">LEFT</span><span class="p">:</span>
+</span><span class="hll">            <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">change_x</span> <span class="o">=</span> <span class="o">-</span><span class="n">MOVEMENT_SPEED</span>
+</span><span class="hll">        <span class="k">elif</span> <span class="n">key</span> <span class="o">==</span> <span class="n">arcade</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">:</span>
+</span><span class="hll">            <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">change_x</span> <span class="o">=</span> <span class="n">MOVEMENT_SPEED</span>
+</span>
+<span class="hll">    <span class="k">def</span> <span class="nf">on_key_release</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">modifiers</span><span class="p">):</span>
+</span><span class="hll">
+</span><span class="hll">        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">arcade</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">UP</span><span class="p">:</span>
+</span><span class="hll">            <span class="k">pass</span>
+</span><span class="hll">        <span class="k">elif</span> <span class="n">key</span> <span class="o">==</span> <span class="n">arcade</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">LEFT</span> <span class="ow">or</span> <span class="n">key</span> <span class="o">==</span> <span class="n">arcade</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">:</span>
+</span><span class="hll">            <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">change_x</span> <span class="o">=</span> <span class="mi">0</span>
+</span>
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">game</span> <span class="o">=</span> <span class="n">MyGame</span><span class="p">(</span><span class="n">SCREEN_WIDTH</span><span class="p">,</span> <span class="n">SCREEN_HEIGHT</span><span class="p">,</span> <span class="s1">&#39;Coin Game&#39;</span><span class="p">)</span>
@@ -305,6 +310,14 @@
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </td></tr></table></div>
+<ul class="simple">
+<li><em>Line 33</em>. Get rid of moving the player automatically.</li>
+<li><em>Lines 35-42</em>. Handle key presses (pressing down). If it is the up
+key, ignore it for now. If left, then move a <em>negative</em> number of
+movement speed pixels to the left. For right, a positive number.</li>
+<li><em>Lines 44-49</em>. When the key is released, reset the <code class="docutils literal"><span class="pre">change_x</span></code>
+value to 0, meaning, don’t change the sprites x direction.</li>
+</ul>
 </li>
 </ol>
 </div>

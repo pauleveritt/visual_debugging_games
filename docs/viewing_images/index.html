@@ -178,11 +178,14 @@
   <div class="section" id="viewing-images-and-sprites">
 <h1>Viewing Images and Sprites<a class="headerlink" href="#viewing-images-and-sprites" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li>Sprites for the coins, falling</li>
+<li>Sprites for the coins, randomly positioned</li>
 </ul>
 <div class="section" id="steps">
 <h2>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
+<li><p class="first">Stop the game, if it is running, and make sure you have no breakpoints
+set.</p>
+</li>
 <li><p class="first">Edit <code class="docutils literal"><span class="pre">game.py</span></code> to have the following:</p>
 <div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -262,12 +265,8 @@
 76
 77
 78
-79
-80
-81
-82
-83</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randrange</span>
-
+79</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="hll"><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randrange</span>
+</span>
 <span class="kn">import</span> <span class="nn">arcade</span>
 
 <span class="n">SCREEN_WIDTH</span> <span class="o">=</span> <span class="mi">600</span>
@@ -276,11 +275,9 @@
 <span class="n">GRAVITY</span> <span class="o">=</span> <span class="mf">0.3</span>
 
 
-<span class="k">class</span> <span class="nc">Coin</span><span class="p">(</span><span class="n">arcade</span><span class="o">.</span><span class="n">Sprite</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">reset_pos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">center_y</span> <span class="o">=</span> <span class="n">randrange</span><span class="p">(</span><span class="n">SCREEN_HEIGHT</span> <span class="o">+</span> <span class="mi">20</span><span class="p">,</span> <span class="n">SCREEN_HEIGHT</span> <span class="o">+</span> <span class="mi">100</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">center_x</span> <span class="o">=</span> <span class="n">randrange</span><span class="p">(</span><span class="n">SCREEN_WIDTH</span><span class="p">)</span>
-
+<span class="hll"><span class="k">class</span> <span class="nc">Coin</span><span class="p">(</span><span class="n">arcade</span><span class="o">.</span><span class="n">Sprite</span><span class="p">):</span>
+</span><span class="hll">    <span class="k">pass</span>
+</span>
 
 <span class="k">class</span> <span class="nc">Player</span><span class="p">(</span><span class="n">arcade</span><span class="o">.</span><span class="n">Sprite</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -309,14 +306,12 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span> <span class="o">=</span> <span class="n">arcade</span><span class="o">.</span><span class="n">SpriteList</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">coin_list</span> <span class="o">=</span> <span class="n">arcade</span><span class="o">.</span><span class="n">SpriteList</span><span class="p">()</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
-            <span class="n">coin</span> <span class="o">=</span> <span class="n">Coin</span><span class="p">(</span><span class="s1">&#39;coin.png&#39;</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
-            <span class="n">coin</span><span class="o">.</span><span class="n">center_x</span> <span class="o">=</span> <span class="n">randrange</span><span class="p">(</span><span class="n">SCREEN_WIDTH</span><span class="p">)</span>
-            <span class="n">coin</span><span class="o">.</span><span class="n">center_y</span> <span class="o">=</span> <span class="n">randrange</span><span class="p">(</span><span class="n">SCREEN_HEIGHT</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">coin_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">coin</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">coin</span><span class="p">)</span>
-
+<span class="hll">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+</span><span class="hll">            <span class="n">coin</span> <span class="o">=</span> <span class="n">Coin</span><span class="p">(</span><span class="s1">&#39;coin.png&#39;</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+</span><span class="hll">            <span class="n">coin</span><span class="o">.</span><span class="n">center_x</span> <span class="o">=</span> <span class="n">randrange</span><span class="p">(</span><span class="n">SCREEN_WIDTH</span><span class="p">)</span>
+</span><span class="hll">            <span class="n">coin</span><span class="o">.</span><span class="n">center_y</span> <span class="o">=</span> <span class="n">randrange</span><span class="p">(</span><span class="n">SCREEN_HEIGHT</span><span class="p">)</span>
+</span><span class="hll">            <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">coin</span><span class="p">)</span>
+</span>
     <span class="k">def</span> <span class="nf">on_draw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">arcade</span><span class="o">.</span><span class="n">start_render</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
@@ -351,6 +346,17 @@
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </td></tr></table></div>
+<ul class="simple">
+<li><em>Line 1</em>. We want a random x/y initial coin location, so import
+<code class="docutils literal"><span class="pre">random.randrange</span></code>.</li>
+<li><em>Lines 11-12</em>. We need another kind of sprite. This class handles a
+coin, which later will move on the screen. For now, just a placeholder.</li>
+<li><em>Lines 42-46</em>. Make 20 coins and put them in a random x/y position,
+then append them to the <code class="docutils literal"><span class="pre">all_sprites</span></code> list.</li>
+</ul>
+</li>
+<li><p class="first"><em>Download coin image</em>. Download this image and save it as <code class="docutils literal"><span class="pre">coin.png</span></code>:</p>
+<a class="reference internal image-reference" href="../_images/coin.png"><img alt="../_images/coin.png" src="../_images/coin.png" style="width: 64.0px; height: 64.0px;" /></a>
 </li>
 </ol>
 </div>

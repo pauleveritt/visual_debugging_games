@@ -177,9 +177,13 @@
             
   <div class="section" id="enhanced-stepping-and-motion">
 <h1>Enhanced Stepping and Motion<a class="headerlink" href="#enhanced-stepping-and-motion" title="Permalink to this headline">¶</a></h1>
+<p>We’ll make the Player sprite move to the right, and stop at the right edge.</p>
 <div class="section" id="steps">
 <h2>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
+<li><p class="first">Stop the game, if it is running, and make sure you have no breakpoints
+set.</p>
+</li>
 <li><p class="first">Edit <code class="docutils literal"><span class="pre">game.py</span></code> to have the following:</p>
 <div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -233,13 +237,13 @@
 
 <span class="k">class</span> <span class="nc">Player</span><span class="p">(</span><span class="n">arcade</span><span class="o">.</span><span class="n">Sprite</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">center_x</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">change_x</span>
-
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">&gt;</span> <span class="n">SCREEN_WIDTH</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">SCREEN_WIDTH</span> <span class="o">-</span> <span class="mi">1</span>
-
+<span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">center_x</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">change_x</span>
+</span><span class="hll">
+</span><span class="hll">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span class="hll">            <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class="hll">        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">&gt;</span> <span class="n">SCREEN_WIDTH</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+</span><span class="hll">            <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">SCREEN_WIDTH</span> <span class="o">-</span> <span class="mi">1</span>
+</span>
 
 <span class="k">class</span> <span class="nc">MyGame</span><span class="p">(</span><span class="n">arcade</span><span class="o">.</span><span class="n">Window</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
@@ -247,8 +251,8 @@
         <span class="n">arcade</span><span class="o">.</span><span class="n">set_background_color</span><span class="p">(</span><span class="n">arcade</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">WHEAT</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">player</span> <span class="o">=</span> <span class="n">Player</span><span class="p">(</span><span class="s1">&#39;player.png&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">center_y</span> <span class="o">=</span> <span class="mi">20</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span> <span class="o">=</span> <span class="n">arcade</span><span class="o">.</span><span class="n">SpriteList</span><span class="p">()</span>
+<span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">center_y</span> <span class="o">=</span> <span class="mi">20</span>
+</span>        <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span> <span class="o">=</span> <span class="n">arcade</span><span class="o">.</span><span class="n">SpriteList</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">on_draw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -256,9 +260,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">delta_time</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">change_x</span> <span class="o">=</span> <span class="n">MOVEMENT_SPEED</span>
-
+<span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">all_sprites_list</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+</span><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">change_x</span> <span class="o">=</span> <span class="n">MOVEMENT_SPEED</span>
+</span>
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">game</span> <span class="o">=</span> <span class="n">MyGame</span><span class="p">(</span><span class="n">SCREEN_WIDTH</span><span class="p">,</span> <span class="n">SCREEN_HEIGHT</span><span class="p">,</span> <span class="s1">&#39;Coin Game&#39;</span><span class="p">)</span>
@@ -270,6 +274,18 @@
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </td></tr></table></div>
+<ul class="simple">
+<li><em>Line 10</em>. Move the player, based on the value (possibly changed)
+of <code class="docutils literal"><span class="pre">change_x</span></code>.</li>
+<li><em>Lines 12-15</em>. If we go past the edge, move the player back be
+on screen. This basically makes a left/right “edge”.</li>
+<li><em>Line 24</em>. Let’s start the player sprite a bit up from the bottom.</li>
+<li><em>Lines 33-34</em>. Every time Arcade updates (many times per second),
+re-draw the player and move it <code class="docutils literal"><span class="pre">MOVEMENT_SPEED</span></code> pixels to the left.</li>
+</ul>
+</li>
+<li><p class="first"><em>Play the game</em>. Click the green debug button <img alt="debug" src="../_images/debug1.png" /> to run the game,
+with no breakpoints, to see it in action.</p>
 </li>
 </ol>
 <ul class="simple">

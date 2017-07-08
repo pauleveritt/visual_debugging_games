@@ -46,6 +46,7 @@ Steps
    ``game.py`` file:
 
    .. image:: player.png
+      :scale: 50%
 
 #. *First breakpoint*. Put a breakpoint on line 35, the ``main()`` call
    in the main block.
@@ -78,12 +79,6 @@ breakpoint. This time, let's step into our game.
 #. *Terminate*. Click |terminate| to quit the program.
 
 #. *Close tab*. Close the ``application.py`` tab.
-
-- First, breakpoint on main(), then step into, step over until return
-
-- Same, but step into MyGame, step over
-
--
 
 What's Going On
 ===============

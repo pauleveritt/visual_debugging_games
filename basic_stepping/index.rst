@@ -46,6 +46,7 @@ Steps
    ``game.py`` file:
 
    .. image:: player.png
+      :scale: 50%
 
 #. *First breakpoint*. Put a breakpoint on line 35, the ``main()`` call
    in the main block.
