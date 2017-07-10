@@ -4,6 +4,11 @@ Viewing Images and Sprites
 
 - Sprites for the coins, randomly positioned
 
+Objectives
+==========
+
+- View an image stored in a variable while debugging
+
 Steps
 =====
 
@@ -30,6 +35,8 @@ Steps
 
    .. image:: coin.png
       :scale: 50%
+
+TODO Come back to this when online
 
 What's Going On
 ===============

@@ -25,6 +25,21 @@ Steps
    - *Lines 13-15*. Move this coin somewhere near the top and randomly
      positioned left/right.
 
+- Click terminal.
+
+- python game.py
+
+- Run | Attach to Local Process...
+
+- Choose game.py
+
+- Debug PID# tool window appears
+
+- Put a breakpoint on line 14
+
+- Execution stops as soon as first coin goes to bottom
+
+- TODO Why does resume not make the next coin stop?
 
 What's Going On
 ===============
