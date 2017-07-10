@@ -31,6 +31,10 @@ Steps
 #. *Debug*. Click the green arrow |run| on line 9 (the ``if __name__``
    line) and choose ``Debug 'game'``.
 
+   .. note:: If you are on macOS or Linux, you might get a prompt to
+   install "Cython" extensions. If so...click the link. You'll get
+   tremendous speedups for debugging.
+
 #. A new window appears. It's our "game"!
 
 #. *Close*. Close the Arcade window.
@@ -48,11 +52,26 @@ Steps
 What's Going On
 ===============
 
-- What it means to run under the debugger
+We run a program using the debugger. What specifically does that mean?
 
-- Cython speedups
+PyCharm using a tool called
+`pydevd <https://pypi.python.org/pypi/pydevd>`_ which manages the running
+of code. PyCharm talks to ``pydevd`` which talks to your code, as part of
+"debugging".
 
-- pyglet window in another window
+What's up with the Cython part? The ``pydevd`` project provides compiled
+extensions for some of the bottlenecks involved in debugging. PyCharm
+provides the pre-compiled extensions on Windows, but not on macOS and Linux.
+Once compiled for a specific interpreter version, these can be used across
+your PyCharm projects.
+
+Just like there are many ways to run your Python code in PyCharm, there are
+also many ways to start debugging. In recent versions of PyCharm, we put an
+arrow in the gutter beside a module's main block.
+
+To finish debugging this game, we can either close the window normally, or
+tell the debugger to "terminate" the Python process. We will use the latter
+in most places of the tutorial, to prevent switching windows.
 
 .. |run| image:: ../images/run.png
 .. |terminate| image:: ../images/stop.gif

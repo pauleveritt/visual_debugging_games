@@ -2,14 +2,14 @@
 Conditional Breakpoints and Animation
 =====================================
 
+We have a game window with a label, but nothing is moving. Boring!
 
-Game:
+Let's see how to do animation in Arcade. Our label will start at an initial
+position, then each time ``update`` is called, we'll move it to the right.
+To make this more clear, we'll also update the string displayed in the label,
+to include the position.
 
-- Set an initial position
-
-- Change the string being displayed
-
-- Implement animation via Arcade's ``update`` method
+Along the way, we'll look at more features in debugger breakpoints.
 
 Objectives
 ==========
@@ -109,6 +109,26 @@ Steps
 What's Going On
 ===============
 
+In this step we're going further into breakpoints, showing some of the
+features that make them much more practical.
+
+For example, conditional breakpoints solve a practical problem in debugging.
+Often you want to stop execution, but only when a certain threshold is
+reached. Click |resume| a hundred times to reach some threshold would...suck.
+In fact, in some cases, the time window for the threshold might be miniscule.
+Having a conditional breakpoint is a big time saver for debugging.
+
+Same for suspending breakpoints. As you work through debugging a problem, you
+might want to go back, temporarily, to seeing your code without all the
+breakpoints. It would be painful to remove all the breakpoints, then re-add
+them.
+
+But sometimes you *do* want to clear all your breakpoints, especially if
+you have set them deep in some library that you can't remember visiting.
+
+Finally, "stop on exceptions" helps when debugging the problems in other
+people's code, where it can be cumbersome to find the line and set the
+breakpoint.
 
 .. |breakpoint| image:: ../images/db_set_breakpoint.png
 .. |view| image:: ../images/debug_view_breakpoints.gif

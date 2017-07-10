@@ -2,11 +2,14 @@
 More Breakpoints and Class-Based Games
 ======================================
 
-- Move to a class
+Our "game" opened a window. But Arcade games are usually classes that
+implement methods to handle the important parts of games. Let's convert
+our Arcade program into a call with an ``on_draw`` function that puts
+stuff on the screen.
 
-- Move break point to different place without restarting
-
-- Variable explorer and inline values
+We'll also look at two more parts of breakpoints. You can change your
+breakpoints to different lines, without needed to restart your program. You
+can also browse around in the variables, plus see variables inline.
 
 Objectives
 ==========
@@ -51,6 +54,10 @@ Steps
    can see that ``title``, ``self``, and more are defined. Click the
    triangle beside ``self`` to see the attributes on the instance.
 
+#. *Inline variables*. You can also see that, at a breakpoint, PyCharm will
+   show variable values as if they were comments in your code. In our case,
+   line 5 (``def __init__``) shows the inline values.
+
 #. *Resume Program*. Click the "moving" green arrow |resume| in the
    debug window to resume execution. It is past the one break point,
    so everything is running as normal.
@@ -72,11 +79,22 @@ Steps
 What's Going On
 ===============
 
-- Why didn't the first breakpoint get triggered?
+We ran under the debugger, we set a breakpoint, and we viewed some values.
+Great!
 
-- Didn't need to restart when setting second breakpoint...why?
+When we set the second breakpoint, execution immediately stopped. But not
+at the first breakpoint. Why? Because Python had already gone past that
+line in our program. If we re-ran our program, that line of startup code
+would be executed and we'd stop at that breakpoint.
 
-- How could you prove execution stopped? (str(time.time())
+The second breakpoint worked without restarting the application. That's
+because Arcade is constantly calling ``on_draw``. Thus, as soon as we
+set our breakpoint, Arcade called ``on_draw`` and execution stopped at
+that breakpoint.
+
+As an experiment, you could prove that ``on_draw`` was being called
+repeatedly by appending ``str(time.time())`` to the label displayed in
+Arcade.
 
 .. |breakpoint| image:: ../images/db_set_breakpoint.png
 .. |resume| image:: ../images/debug_resume.png

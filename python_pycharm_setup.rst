@@ -3,7 +3,7 @@ Python Setup
 ============
 
 We're writing games in Python, so that means we need a Python setup.
-In this section, we'll download and install Python, get an editor to
+In this section, we'll download and install Python 3.6, get PyCharm to
 use for our coding, and create a project.
 
 .. note::
@@ -55,11 +55,22 @@ often install *packages* which others have published. You don't want
 packages for one project to conflict with another. Virtual environments
 give this kind of isolation.
 
-TODO give the steps needed for creating the project
-
 .. raw:: html
 
   <iframe width="640" height="360"
     src="https://www.youtube.com/embed/EVWx7cYXPi4"
     frameborder="0" allowfullscreen="1">&nbsp;</iframe>
 
+- On the ``Welcome to PyCharm`` screen, click ``Create a New Project``.
+
+- In the ``New Project`` dialog, store your project as ``arcade_project``.
+
+- Also, click the ``...`` at the end of the ``Interpreter`` line and choose
+  ``Create VirtualEnv``.
+
+- On the ``Create Virtual Environment`` screen, make a new virtual
+  environment based on the Python 3.6 that you installed above. The
+  ``Location`` can be anywhere, e.g. a ``.virtualenvs`` directory in your
+  home directory. Then click ``Ok``.
+
+- Back on the new project dialog, click ``Create``.
