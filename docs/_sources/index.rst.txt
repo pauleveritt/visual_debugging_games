@@ -24,7 +24,6 @@ process of writing an
     stack_frames/index.rst
     evaluate_expression/index.rst
     console/index.rst
-    attach_process/index.rst
     testing/index.rst
     annotate_types/index.rst
 

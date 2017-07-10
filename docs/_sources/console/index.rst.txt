@@ -37,6 +37,8 @@ Steps
   (``self.change_y *= -BOUNCINESS``) and click |debug| to restart the
   game under the debugger. Execution stops at that line.
 
+
+
 TODO
 
 - We have a flaw. Shouldn't be less than zero at startup. Line 18.

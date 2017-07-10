@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Debugging During Testing and Collisions &#8212; Visual Debugging and Games 1.0.0 documentation</title>
+    <title>Debugging During Testing and Moving Coins with Collisions &#8212; Visual Debugging and Games 1.0.0 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -24,7 +24,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Annotate Types and Scores" href="../annotate_types/index.html" />
-    <link rel="prev" title="Attach to Process and Moving Coins" href="../attach_process/index.html" />
+    <link rel="prev" title="Console and Bounciness" href="../console/index.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -40,9 +40,10 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="debugging-during-testing-and-collisions">
-<h1>Debugging During Testing and Collisions<a class="headerlink" href="#debugging-during-testing-and-collisions" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="debugging-during-testing-and-moving-coins-with-collisions">
+<h1>Debugging During Testing and Moving Coins with Collisions<a class="headerlink" href="#debugging-during-testing-and-moving-coins-with-collisions" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
+<li>Moving coins</li>
 <li>Collisions</li>
 </ul>
 <div class="section" id="steps">
@@ -159,15 +160,15 @@ set.</p>
 
 
 <span class="k">class</span> <span class="nc">Coin</span><span class="p">(</span><span class="n">arcade</span><span class="o">.</span><span class="n">Sprite</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">reset_pos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">center_y</span> <span class="o">=</span> <span class="n">randrange</span><span class="p">(</span><span class="n">SCREEN_HEIGHT</span> <span class="o">+</span> <span class="mi">20</span><span class="p">,</span> <span class="n">SCREEN_HEIGHT</span> <span class="o">+</span> <span class="mi">100</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">center_x</span> <span class="o">=</span> <span class="n">randrange</span><span class="p">(</span><span class="n">SCREEN_WIDTH</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">center_y</span> <span class="o">-=</span> <span class="mi">1</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">reset_pos</span><span class="p">()</span>
-
+<span class="hll">    <span class="k">def</span> <span class="nf">reset_pos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">center_y</span> <span class="o">=</span> <span class="n">randrange</span><span class="p">(</span><span class="n">SCREEN_HEIGHT</span> <span class="o">+</span> <span class="mi">20</span><span class="p">,</span> <span class="n">SCREEN_HEIGHT</span> <span class="o">+</span> <span class="mi">100</span><span class="p">)</span>
+</span><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">center_x</span> <span class="o">=</span> <span class="n">randrange</span><span class="p">(</span><span class="n">SCREEN_WIDTH</span><span class="p">)</span>
+</span>
+<span class="hll">    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">center_y</span> <span class="o">-=</span> <span class="mi">1</span>
+</span><span class="hll">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span class="hll">            <span class="bp">self</span><span class="o">.</span><span class="n">reset_pos</span><span class="p">()</span>
+</span>
 
 <span class="k">class</span> <span class="nc">Player</span><span class="p">(</span><span class="n">arcade</span><span class="o">.</span><span class="n">Sprite</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -246,6 +247,12 @@ set.</p>
 </pre></div>
 </td></tr></table></div>
 <ul class="simple">
+<li><em>Lines 17-20</em>. The regular sprite <code class="docutils literal"><span class="pre">update</span></code> function, called whenever
+the game’s <code class="docutils literal"><span class="pre">on_draw</span></code> says to update (line 63). Here we move the coin
+down a pixel. Then, if it reaches the bottom, “respawn” by calling
+its <code class="docutils literal"><span class="pre">reset_pos</span></code> method.</li>
+<li><em>Lines 13-15</em>. Move this coin somewhere near the top and randomly
+positioned left/right.</li>
 <li><em>Line 52</em>. As we see next, we also want to keep a sprite list of just
 for coins.</li>
 <li><em>Line 57</em>. Add this coin to the coin list.</li>
@@ -291,10 +298,9 @@ player.</li>
 <li class="toctree-l1"><a class="reference internal" href="../enhanced_stepping/index.html">Enhanced Stepping and Motion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../watches/index.html">Watches and Keypresses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stack_frames/index.html">Stack Frames and Vertical Movement</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../viewing_images/index.html">Viewing Images and Sprites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../consoles/index.html">Consoles and Bounciness</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../attach_process/index.html">Attach to Process and Moving Coins</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Debugging During Testing and Collisions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluate_expression/index.html">Evaluate Expression and Sprites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../console/index.html">Console and Bounciness</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Debugging During Testing and Moving Coins with Collisions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../annotate_types/index.html">Annotate Types and Scores</a></li>
 </ul>
 
@@ -302,7 +308,7 @@ player.</li>
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="../attach_process/index.html" title="previous chapter">Attach to Process and Moving Coins</a></li>
+      <li>Previous: <a href="../console/index.html" title="previous chapter">Console and Bounciness</a></li>
       <li>Next: <a href="../annotate_types/index.html" title="next chapter">Annotate Types and Scores</a></li>
   </ul></li>
 </ul>
