@@ -3,13 +3,11 @@ Watches and Keypresses
 ======================
 
 Instead of moving on its own, our player will move right/left only when
-we press the right/left arrow key.
+we press the right/left arrow key. To do this, we'll use key *press* to
+assign a change of direction factor, then key *up* to clear that
+direction-changing value.
 
-- keypress handling to change left/right
-
-- keyhold to move, keyrelease to stop
-
-- For now, skip "up" (will be bounciness later)
+For now, we'll skip "up" as later we'll introduce gravity and bouncing.
 
 Objectives
 ==========
@@ -64,6 +62,14 @@ Steps
 
 What's Going On
 ===============
+
+Watches are special variables which solve many purposes. First, you might
+have a variable that is deeply nested. Watches simplify this by flattening
+the hierarchy to show just the value you need.
+
+Dynamic watches are much more useful. You can use them to watch the length
+of an array as you step through code and frames, display the results of
+conditions, and more.
 
 .. |debug| image:: ../images/debug.png
 .. |new| image:: ../images/new.png
