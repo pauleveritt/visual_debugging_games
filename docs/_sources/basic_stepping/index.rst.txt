@@ -2,6 +2,10 @@
 Basic Stepping and Players
 ==========================
 
+Let's move from a label of text, to a "player" with an image, aka a sprite.
+As part of adding this code, we'll learn about "stepping" through code
+that we are debugging.
+
 Objectives
 ==========
 
@@ -80,6 +84,15 @@ breakpoint. This time, let's step into our game.
 
 What's Going On
 ===============
+
+In this section we introduce stepping. You stop at a certain place (a
+breakpoint), then gradually trace the flow through your program. Usually
+you are looking to see how variable values change, what branches are taken
+on conditions, and other forensics to solve a problem.
+
+We just did a simple case, though. We stepped over certain lines, then
+stepped *into* another "frame" of code. Still, this is an important part
+of debugging code by watching the basics of how lines get executed.
 
 .. |rerun| image:: ../images/stop_and_rerun.png
 .. |debug| image:: ../images/debug.png

@@ -55,11 +55,16 @@ Steps
 What's Going On
 ===============
 
-- What are the arguments? Mouse over and quick preview
+A breakpoint stops execution of a Python program on a certain line, in a
+certain "scope". The variables that are in scope at that line can then be
+shown in the debugger. But as you move around in your program, you'll enter
+other scopes, with new variables and the other scope's variables will
+disappear.
 
-- Experiment with defining a variable before the breakpoint
+You can experiment with this by putting ``x = 1`` on the line before the
+breakpoint, then restarting your debugging. ``x`` will be in scope at
+the breakpoint, so you should see it.
 
 .. |breakpoint| image:: ../images/db_set_breakpoint.png
 .. |run| image:: ../images/run.png
-.. |resume| image:: ../images/debug_resume.png
 .. |terminate| image:: ../images/stop.gif

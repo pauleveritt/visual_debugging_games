@@ -31,9 +31,11 @@ Steps
 #. *Debug*. Click the green arrow |run| on line 9 (the ``if __name__``
    line) and choose ``Debug 'game'``.
 
-   .. note:: If you are on macOS or Linux, you might get a prompt to
-   install "Cython" extensions. If so...click the link. You'll get
-   tremendous speedups for debugging.
+   .. note::
+
+     If you are on macOS or Linux, you might get a prompt to
+     install "Cython" extensions. If so...click the link. You'll get
+     tremendous speedups for debugging.
 
 #. A new window appears. It's our "game"!
 

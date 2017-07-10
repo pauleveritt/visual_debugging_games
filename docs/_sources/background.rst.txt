@@ -9,7 +9,7 @@ Writing games is fun. Learning debugging by writing games? Even more fun!
 This tutorial teaches *visual* debugging, *visually*:
 
 - Instead of command-line pdb (eat your broccoli),  we use the
-  visual debugging in PyCharm Community Edition
+  visual debugger in PyCharm Community Edition
 
 - Instead of boring hello world Python with prime numbers, we gradually
   write a 2d game, with each step teaching both a debugging concept and

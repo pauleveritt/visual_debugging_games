@@ -1,188 +1,54 @@
 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>More Breakpoints and Class-Based Games &mdash; Visual Debugging and Games 1.0.0 documentation</title>
-  
-
-  
-  
-  
-  
-
-  
-
-  
-  
-    
-
-  
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Visual Debugging and Games 1.0.0 documentation" href="../index.html"/>
-        <link rel="next" title="Conditional Breakpoints and Animation" href="../conditional_breakpoints/index.html"/>
-        <link rel="prev" title="First Breakpoints and Drawing Text" href="../first_breakpoint/index.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>More Breakpoints and Class-Based Games &#8212; Visual Debugging and Games 1.0.0 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Conditional Breakpoints and Animation" href="../conditional_breakpoints/index.html" />
+    <link rel="prev" title="First Breakpoints and Drawing Text" href="../first_breakpoint/index.html" />
    
-  <div class="wy-grid-for-nav">
-
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
-          
-
-          
-            <a href="../index.html" class="icon icon-home"> Visual Debugging and Games
-          
-
-          
-          </a>
-
-          
-            
-            
-              <div class="version">
-                1.0.0
-              </div>
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../background.html">Background</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python_pycharm_setup.html">Python Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../arcade_setup/index.html">Arcade Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../first_debugger/index.html">First Debugger and Arcade Windows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../first_breakpoint/index.html">First Breakpoints and Drawing Text</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">More Breakpoints and Class-Based Games</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#objectives">Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#steps">Steps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#what-s-going-on">What’s Going On</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../conditional_breakpoints/index.html">Conditional Breakpoints and Animation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../basic_stepping/index.html">Basic Stepping and Players</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../enhanced_stepping/index.html">Enhanced Stepping and Motion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../watches/index.html">Watches and Keypresses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../stack_frames/index.html">Stack Frames and Vertical Movement</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../viewing_images/index.html">Viewing Images and Sprites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../consoles/index.html">Consoles and Bounciness</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../attach_process/index.html">Attach to Process and Moving Coins</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Debugging During Testing and Collisions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../annotate_types/index.html">Annotate Types and Scores</a></li>
-</ul>
-
-            
-          
-        </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Visual Debugging and Games</a>
-        
-      </nav>
-
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
-  <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html">Docs</a> &raquo;</li>
-        
-      <li>More Breakpoints and Class-Based Games</li>
-    
-    
-      <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="../_sources/more_breakpoints/index.rst.txt" rel="nofollow"> View page source</a>
-          
-        
-      </li>
-    
-  </ul>
-
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
             
   <div class="section" id="more-breakpoints-and-class-based-games">
 <h1>More Breakpoints and Class-Based Games<a class="headerlink" href="#more-breakpoints-and-class-based-games" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li>Move to a class</li>
-<li>Move break point to different place without restarting</li>
-<li>Variable explorer and inline values</li>
-</ul>
+<p>Our “game” opened a window. But Arcade games are usually classes that
+implement methods to handle the important parts of games. Let’s convert
+our Arcade program into a call with an <code class="docutils literal"><span class="pre">on_draw</span></code> function that puts
+stuff on the screen.</p>
+<p>We’ll also look at two more parts of breakpoints. You can change your
+breakpoints to different lines, without needed to restart your program. You
+can also browse around in the variables, plus see variables inline.</p>
 <div class="section" id="objectives">
 <h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -264,7 +130,11 @@ from the previous step, click on it to remove the breakpoint.</p>
 can see that <code class="docutils literal"><span class="pre">title</span></code>, <code class="docutils literal"><span class="pre">self</span></code>, and more are defined. Click the
 triangle beside <code class="docutils literal"><span class="pre">self</span></code> to see the attributes on the instance.</p>
 </li>
-<li><p class="first"><em>Resume Program</em>. Click the “moving” green arrow <img alt="resume" src="../_images/debug_resume1.png" /> in the
+<li><p class="first"><em>Inline variables</em>. You can also see that, at a breakpoint, PyCharm will
+show variable values as if they were comments in your code. In our case,
+line 5 (<code class="docutils literal"><span class="pre">def</span> <span class="pre">__init__</span></code>) shows the inline values.</p>
+</li>
+<li><p class="first"><em>Resume Program</em>. Click the “moving” green arrow <img alt="resume" src="../_images/debug_resume.png" /> in the
 debug window to resume execution. It is past the one break point,
 so everything is running as normal.</p>
 </li>
@@ -272,11 +142,11 @@ so everything is running as normal.</p>
 (<code class="docutils literal"><span class="pre">arcade.draw_text</span></code>). Execution stops, on that line. Now, only
 <code class="docutils literal"><span class="pre">self</span></code> is in scope.</p>
 </li>
-<li><p class="first"><em>Resume Program</em>. Click <img alt="resume" src="../_images/debug_resume1.png" /> to resume execution. It stops
+<li><p class="first"><em>Resume Program</em>. Click <img alt="resume" src="../_images/debug_resume.png" /> to resume execution. It stops
 immediately again.</p>
 </li>
 <li><p class="first"><em>Clear and resume</em>. Click the red circle <img alt="breakpoint" src="../_images/db_set_breakpoint3.png" /> beside line 12
-to clear that breakpoint. Then, click the moving green arrow <img alt="resume" src="../_images/debug_resume1.png" />
+to clear that breakpoint. Then, click the moving green arrow <img alt="resume" src="../_images/debug_resume.png" />
 to resume execution. This time, it doesn’t stop for execution.</p>
 </li>
 <li><p class="first"><em>Close the game</em>. Either close the Arcade window or click the red square
@@ -286,84 +156,95 @@ to resume execution. This time, it doesn’t stop for execution.</p>
 </div>
 <div class="section" id="what-s-going-on">
 <h2>What’s Going On<a class="headerlink" href="#what-s-going-on" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Why didn’t the first breakpoint get triggered?</li>
-<li>Didn’t need to restart when setting second breakpoint…why?</li>
-<li>How could you prove execution stopped? (str(time.time())</li>
-</ul>
+<p>We ran under the debugger, we set a breakpoint, and we viewed some values.
+Great!</p>
+<p>When we set the second breakpoint, execution immediately stopped. But not
+at the first breakpoint. Why? Because Python had already gone past that
+line in our program. If we re-ran our program, that line of startup code
+would be executed and we’d stop at that breakpoint.</p>
+<p>The second breakpoint worked without restarting the application. That’s
+because Arcade is constantly calling <code class="docutils literal"><span class="pre">on_draw</span></code>. Thus, as soon as we
+set our breakpoint, Arcade called <code class="docutils literal"><span class="pre">on_draw</span></code> and execution stopped at
+that breakpoint.</p>
+<p>As an experiment, you could prove that <code class="docutils literal"><span class="pre">on_draw</span></code> was being called
+repeatedly by appending <code class="docutils literal"><span class="pre">str(time.time())</span></code> to the label displayed in
+Arcade.</p>
 </div>
 </div>
 
 
-           </div>
-           <div class="articleComments">
-            
-           </div>
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../conditional_breakpoints/index.html" class="btn btn-neutral float-right" title="Conditional Breakpoints and Animation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../first_breakpoint/index.html" class="btn btn-neutral" title="First Breakpoints and Drawing Text" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2017, Paul Everitt.
-
-    </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
-
-</footer>
-
         </div>
       </div>
-
-    </section>
-
-  </div>
-  
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Visual Debugging and Games</a></h1>
 
 
-  
 
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'1.0.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
 
-  
 
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
 
-  
-  
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
-      });
-  </script>
-   
 
-</body>
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../background.html">Background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_pycharm_setup.html">Python Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arcade_setup/index.html">Arcade Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../first_debugger/index.html">First Debugger and Arcade Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../first_breakpoint/index.html">First Breakpoints and Drawing Text</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">More Breakpoints and Class-Based Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conditional_breakpoints/index.html">Conditional Breakpoints and Animation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic_stepping/index.html">Basic Stepping and Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enhanced_stepping/index.html">Enhanced Stepping and Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../watches/index.html">Watches and Keypresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stack_frames/index.html">Stack Frames and Vertical Movement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../viewing_images/index.html">Viewing Images and Sprites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../consoles/index.html">Consoles and Bounciness</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../attach_process/index.html">Attach to Process and Moving Coins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Debugging During Testing and Collisions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../annotate_types/index.html">Annotate Types and Scores</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../first_breakpoint/index.html" title="previous chapter">First Breakpoints and Drawing Text</a></li>
+      <li>Next: <a href="../conditional_breakpoints/index.html" title="next chapter">Conditional Breakpoints and Animation</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Paul Everitt.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/more_breakpoints/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
 </html>
