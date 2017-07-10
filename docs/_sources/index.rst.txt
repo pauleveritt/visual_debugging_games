@@ -22,8 +22,8 @@ process of writing an
     enhanced_stepping/index.rst
     watches/index.rst
     stack_frames/index.rst
-    viewing_images/index.rst
-    consoles/index.rst
+    evaluate_expression/index.rst
+    console/index.rst
     attach_process/index.rst
     testing/index.rst
     annotate_types/index.rst

@@ -33,7 +33,7 @@ Steps
 
    - *Line 8*. Draw some text on the screen at the 100,400 position.
 
-#. *Line numbers*. If line numbers are visible, right click in the "gutter"
+#. *Line numbers*. If line numbers aren't visible, right click in the "gutter"
    to the left of the the code and choose ``Show Line Number``.
 
 #. *Set breakpoint*. Click in the gutter area to the left of line 8, causing

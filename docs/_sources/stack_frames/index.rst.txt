@@ -2,9 +2,11 @@
 Stack Frames and Vertical Movement
 ==================================
 
-- Handling the up key
+Our player can move side to side. We'd like to move the player up, then
+have gravity pull the player back down.
 
-- Gravity
+As part of developing this, we'll show how to debugger can move us between
+stack frames in the execution.
 
 Objectives
 ==========
@@ -65,7 +67,24 @@ Steps
 What's Going On
 ===============
 
-- Watches change evaluation as you move through frames
+As your program executes, you might jump into a function, or into the
+constructor for a class. In Python, each of these jumps creates a "stack
+frame" which holds all the information at that point before you jump. That
+way, when you return, all your variables have the right data.
+
+When you are debugging, you might ask: "How did I get to this breakpoint?"
+This is especially true when something else called the code at the
+breakpoint. Perhaps you have "stop at exception turned on" and you weren't
+the one tracing the path to the breakpoint. Or, as in Arcade, something else
+is calling your code (e.g. ``on_draw``).
+
+The debugger makes it easy to move forwards and backwards through
+stack frames on the "call stack", inspecting data as you move.
+
+Note though that some operations (e.g. watches) might not be meaningful in
+other stack frames. You might watch the value of ``len(self.title)`` but
+if there is no ``self.title`` in another stack frame, the watch will not
+show anything.
 
 .. |rerun| image:: ../images/stop_and_rerun.png
 .. |debug| image:: ../images/debug.png

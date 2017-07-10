@@ -1,13 +1,18 @@
-=======================
-Consoles and Bounciness
-=======================
+======================
+Console and Bounciness
+======================
 
-- Bounciness
+We can press up (repeatedly) to move our player up, and with gravity,
+the player comes back down. Wouldn't it be cool if, when the player hits
+the bottom, they bounce a little?
+
+Let's add bounciness and also show how to use a Python console at a
+breakpoint.
 
 Objectives
 ==========
 
-- At breakpoints, use the two flavors of interactive consoles
+- Use the Python Console at a breakpoint, including ipython
 
 Steps
 =====
