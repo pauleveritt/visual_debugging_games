@@ -3,6 +3,7 @@ Enhanced Stepping and Motion
 ============================
 
 We'll make the Player sprite move to the right, and stop at the right edge.
+We will also see 3 important additions to our stepping toolset.
 
 Objectives
 ==========
@@ -80,6 +81,21 @@ Steps
 What's Going On
 ===============
 
+As you move into and out of code, you'll need more productive ways to step.
+Especially when you are chasing the same problem repeatedly. Clicking "step
+over" a hundred times isn't a good option.
+
+"Step out" is the first line of defense. You go into a function, looking for
+evidence, and as soon as you have what you need, you step out.
+
+"Run to cursor" is an oft-overlooked tip. Your eyes tell you exactly where
+you'd like to jump to. Put your cursor there and let PyCharm handle how to
+get there.
+
+Finally, you'll frequently find that "step into" takes you out of your code,
+into Python packages that you're not interested in investigating as part
+of your debugging. "Step into my code" lets you use "step into" without
+being taken down a rabbit hole.
 
 .. |rerun| image:: ../images/stop_and_rerun.png
 .. |debug| image:: ../images/debug.png
