@@ -39,7 +39,7 @@ Steps
 #. *Add a watch*. Click the ``New Watch`` button |new| directly under
    ``Variables``, in the left column beside the variable display. In
    PyCharm versions after 2017.1, this is a green plus with watch
-   glasses underneath. Enter ``key === arcade.key.UP`` as the watch
+   glasses underneath. Enter ``key == arcade.key.UP`` as the watch
    value.
 
 #. *Set a breakpoint*. We want to stop on keypresses and quickly see

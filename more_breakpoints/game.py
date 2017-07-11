@@ -1,3 +1,5 @@
+from time import time
+
 import arcade
 
 
@@ -9,7 +11,7 @@ class MyGame(arcade.Window):
 
     def on_draw(self):
         arcade.start_render()
-        arcade.draw_text(self.title, 100, 400, arcade.color.BLACK)
+        arcade.draw_text(str(time()), 100, 400, arcade.color.BLACK)
 
 
 def main():
