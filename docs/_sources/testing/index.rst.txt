@@ -128,8 +128,6 @@ of the sprites in the sprite list which overlap with the passed-in sprite.
 Our coins move down the screen and, when they reach the bottom, respawn
 themselves somewhere close to the top of the screen.
 
-- Arcade's collision detection
-
 .. |debug| image:: ../images/debug.png
 .. |rerun| image:: ../images/stop_and_rerun.png
 .. |resume| image:: ../images/debug_resume.png

@@ -294,16 +294,15 @@ and has a lot of UI specific to test running.</p>
 <p>Our first test fails. That’s normal: we told it to fail.</p>
 <ol class="arabic">
 <li><p class="first"><em>Enter test</em>. Let’s fill in a simple test:</p>
-<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span>
 
 
 <span class="k">class</span> <span class="nc">TestCoin</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
@@ -312,7 +311,6 @@ and has a lot of UI specific to test running.</p>
         <span class="n">c</span> <span class="o">=</span> <span class="n">Coin</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">center_x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
         <span class="n">c</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="mi">620</span> <span class="o">&lt;</span> <span class="n">c</span><span class="o">.</span><span class="n">center_y</span> <span class="o">&lt;</span> <span class="mi">700</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 </li>
@@ -358,9 +356,6 @@ pass it an Arcade sprite and a second sprite list, and Arcade returns each
 of the sprites in the sprite list which overlap with the passed-in sprite.</p>
 <p>Our coins move down the screen and, when they reach the bottom, respawn
 themselves somewhere close to the top of the screen.</p>
-<ul class="simple">
-<li>Arcade’s collision detection</li>
-</ul>
 </div>
 </div>
 
@@ -383,7 +378,7 @@ themselves somewhere close to the top of the screen.</p>
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../background.html">Background</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python_pycharm_setup.html">Python Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_pycharm_setup.html">Python and PyCharm Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../arcade_setup/index.html">Arcade Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../first_debugger/index.html">First Debugger and Arcade Windows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../first_breakpoint/index.html">First Breakpoints and Drawing Text</a></li>

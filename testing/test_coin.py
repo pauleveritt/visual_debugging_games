@@ -7,4 +7,3 @@ class TestCoin(TestCase):
         c = Coin()
         self.assertEquals(c.center_x, 0)
         c.update()
-        self.assertTrue(620 < c.center_y < 700)
