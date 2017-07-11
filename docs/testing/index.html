@@ -333,8 +333,9 @@ until execution is on line 14 of <code class="docutils literal"><span class="pre
 <img alt="evaluate" src="../_images/variables_evaluate_expr1.png" /> and get the minimum value of <code class="docutils literal"><span class="pre">SCREEN_HEIGHT</span> <span class="pre">+</span> <span class="pre">20</span></code>, which is
 620. We now know what to put in our test. Do the same for
 <code class="docutils literal"><span class="pre">SCREEN_HEIGHT</span> <span class="pre">+</span> <span class="pre">100</span></code> which gives 700.</li>
-<li><em>Change test assertion</em>. Let’s assert that the value is between the
-correct range: <code class="docutils literal"><span class="pre">self.assertTrue(620</span> <span class="pre">&lt;</span> <span class="pre">c.center_y</span> <span class="pre">&lt;</span> <span class="pre">700)</span></code>.</li>
+<li><em>Add test assertion</em>. Let’s assert that the value is between the
+correct range: <code class="docutils literal"><span class="pre">self.assertTrue(620</span> <span class="pre">&lt;</span> <span class="pre">c.center_y</span> <span class="pre">&lt;</span> <span class="pre">700)</span></code>. Add this line
+after <code class="docutils literal"><span class="pre">c.update()</span></code>.</li>
 <li><em>Remove breakpoint</em>. Click the red circle to remove the breakpoint in the
 test file.</li>
 <li><em>Re-run</em>. Click the debug button <img alt="debug" src="../_images/debug8.png" /> in the debug window to re-run

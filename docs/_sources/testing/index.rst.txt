@@ -99,8 +99,9 @@ Let's use the debugger to investigate.
    620. We now know what to put in our test. Do the same for
    ``SCREEN_HEIGHT + 100`` which gives 700.
 
-#. *Change test assertion*. Let's assert that the value is between the
-   correct range: ``self.assertTrue(620 < c.center_y < 700)``.
+#. *Add test assertion*. Let's assert that the value is between the
+   correct range: ``self.assertTrue(620 < c.center_y < 700)``. Add this line
+   after ``c.update()``.
 
 #. *Remove breakpoint*. Click the red circle to remove the breakpoint in the
    test file.
