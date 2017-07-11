@@ -1,6 +1,6 @@
-============
-Python Setup
-============
+========================
+Python and PyCharm Setup
+========================
 
 We're writing games in Python, so that means we need a Python setup.
 In this section, we'll download and install Python 3.6, get PyCharm to
