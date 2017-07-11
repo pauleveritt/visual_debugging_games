@@ -12,7 +12,7 @@ class MyGame(arcade.Window):
         arcade.start_render()
         y = self.height / 2
         message = f'{self.title}: {self.position}'
-        arcade.draw_text(y, self.position, y, arcade.color.BLACK, 12)
+        arcade.draw_text(message, self.position, y, arcade.color.BLACK, 12)
 
     def update(self, delta_time):
         self.position += 1

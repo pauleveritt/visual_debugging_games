@@ -37,7 +37,7 @@ Steps
         :language: python
         :linenos:
 
-#. *Run*. On line 9, in the left gutter, click the green run arrow |run| and
+#. *Run*. On line 93, in the left gutter, click the green run arrow |run| and
    choose ``Run 'game'``.
 
 #. *Error*. A panel should appear at the bottom with an error message -- we
