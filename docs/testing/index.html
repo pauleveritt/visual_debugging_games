@@ -42,10 +42,14 @@
             
   <div class="section" id="debugging-during-testing-and-moving-coins-with-collisions">
 <h1>Debugging During Testing and Moving Coins with Collisions<a class="headerlink" href="#debugging-during-testing-and-moving-coins-with-collisions" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li>Moving coins</li>
-<li>Collisions</li>
-</ul>
+<p>Our player moves, but our coins don’t. Let’s have the coins move down, and
+when it reaches the bottom, it “respawns” near the top. Also, when a player
+collides with a coin, the coin disappears.</p>
+<p>Let’s also use this point to show a hidden feature of debugging: use
+during testing and test-driven development. As you are writing a test,
+you are in discovery mode and, since your code is still emerging, things are
+going to break. This is a good place to use debugging, as part of test
+writing.</p>
 <div class="section" id="steps">
 <h2>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
@@ -262,10 +266,101 @@ player.</li>
 <li><em>Lines 69-70</em>. Kill each of the colliding coins.</li>
 </ul>
 </li>
+<li><p class="first"><em>Run under the debugger</em>. Just to see what we’ve done with the coins,
+click the debug button <img alt="debug" src="../_images/debug8.png" /> to run the game, without any breakpoints.
+You see the coins moving down, and when the player hits one, it “respawns”
+higher up.</p>
+</li>
+<li><p class="first"><em>Generate a test</em>. Let’s test the Coin’s <code class="docutils literal"><span class="pre">reset_pos</span></code> method. PyCharm
+can help you generate the test code. Click on line 13 (<code class="docutils literal"><span class="pre">def</span> <span class="pre">reset_pos</span></code>)
+and choose <code class="docutils literal"><span class="pre">Navigate</span> <span class="pre">|</span> <span class="pre">Test</span></code>.</p>
+</li>
+<li><p class="first"><em>Create new test</em>. There isn’t a test to navigate to, so PyCharm asks if
+you want to create one. Choose <code class="docutils literal"><span class="pre">Create</span> <span class="pre">New</span> <span class="pre">Test...</span></code></p>
+</li>
+<li><p class="first"><em>Select method</em>. Click the checkbox to generate a test <code class="docutils literal"><span class="pre">test_reset_pos</span></code>
+and click <a href="#id1"><span class="problematic" id="id2">``</span></a>OK.</p>
+</li>
+<li><p class="first"><em>Add to git</em>. Say yes to add the new test file to git.</p>
+</li>
+<li><p class="first"><em>Run the test</em>. Right-click in the <code class="docutils literal"><span class="pre">test_coin.py</span></code> editor and choose
+<code class="docutils literal"><span class="pre">Run</span> <span class="pre">'Unittests</span> <span class="pre">in</span> <span class="pre">test_co...</span></code> to run the file under the project-default
+test runner (Python’s standard <code class="docutils literal"><span class="pre">unittest</span></code>.)</p>
+</li>
+</ol>
+<p>PyCharm opens a Run tool window with the output of the test run. This run
+tool window is different: it is a run configuration of type Python Unittests
+and has a lot of UI specific to test running.</p>
+<p>Our first test fails. That’s normal: we told it to fail.</p>
+<ol class="arabic">
+<li><p class="first"><em>Enter test</em>. Let’s fill in a simple test:</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span>
+
+
+<span class="k">class</span> <span class="nc">TestCoin</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">test_reset_pos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="kn">from</span> <span class="nn">game</span> <span class="kn">import</span> <span class="n">Coin</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">Coin</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">center_x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="mi">620</span> <span class="o">&lt;</span> <span class="n">c</span><span class="o">.</span><span class="n">center_y</span> <span class="o">&lt;</span> <span class="mi">700</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first"><em>Rerun test</em>. Click the green play button in the test window to rerun the
+test. The test now passes.</p>
+</li>
+</ol>
+<p>We’d like to know more than “doesn’t equal”. The coin should be near the top.
+Let’s use the debugger to investigate.</p>
+<ol class="arabic simple">
+<li><em>Set breakpoint</em>. Click in the gutter to set a breakpoint <img alt="breakpoint" src="../_images/db_set_breakpoint7.png" />
+on line 9 in the test (<code class="docutils literal"><span class="pre">c.update()</span></code>).</li>
+<li><em>Run test under debugger</em>. Right-click in the editor and choose
+<code class="docutils literal"><span class="pre">Debug</span> <span class="pre">'Unittests</span> <span class="pre">in</span> <span class="pre">test_co...</span></code> to start debugging the test. Execution
+stops on that line.</li>
+<li><em>Step into</em>. Click the step into button <img alt="stepinto" src="../_images/frames_step_into3.png" /> to go into the coin’s
+<code class="docutils literal"><span class="pre">update</span></code> method. Click the step into my code button <img alt="stepintomy" src="../_images/step_into_my_code1.png" /> 3 times
+until execution is on line 14 of <code class="docutils literal"><span class="pre">game.py</span></code> (<code class="docutils literal"><span class="pre">self.center_y</span> <span class="pre">=</span></code>).</li>
+<li><em>Use Evaluate Expression</em>. Click the evaluate expression button
+<img alt="evaluate" src="../_images/variables_evaluate_expr1.png" /> and get the minimum value of <code class="docutils literal"><span class="pre">SCREEN_HEIGHT</span> <span class="pre">+</span> <span class="pre">20</span></code>, which is
+620. We now know what to put in our test. Do the same for
+<code class="docutils literal"><span class="pre">SCREEN_HEIGHT</span> <span class="pre">+</span> <span class="pre">100</span></code> which gives 700.</li>
+<li><em>Change test assertion</em>. Let’s assert that the value is between the
+correct range: <code class="docutils literal"><span class="pre">self.assertTrue(620</span> <span class="pre">&lt;</span> <span class="pre">c.center_y</span> <span class="pre">&lt;</span> <span class="pre">700)</span></code>.</li>
+<li><em>Remove breakpoint</em>. Click the red circle to remove the breakpoint in the
+test file.</li>
+<li><em>Re-run</em>. Click the debug button <img alt="debug" src="../_images/debug8.png" /> in the debug window to re-run
+the tests under the debugger, which now passes.</li>
 </ol>
 </div>
 <div class="section" id="what-s-going-on">
 <h2>What’s Going On<a class="headerlink" href="#what-s-going-on" title="Permalink to this headline">¶</a></h2>
+<p>We wrote a simple Python unittest, which executes under the test runner
+configured for the run configuration. By default, PyCharm assigns the test
+runner under <code class="docutils literal"><span class="pre">Settings</span> <span class="pre">|</span> <span class="pre">Tools</span> <span class="pre">|</span> <span class="pre">Python</span> <span class="pre">Integrated</span> <span class="pre">Tools</span></code>. If you don’t
+<code class="docutils literal"><span class="pre">nose</span></code> or <code class="docutils literal"><span class="pre">pytest</span></code>, this defaults to Python’s standard <code class="docutils literal"><span class="pre">unittest</span></code> test
+runner from the standard library.</p>
+<p>The Debug tool window changes to have all the capabilities of a visual test
+runner. But the two-tab interface – <code class="docutils literal"><span class="pre">Debugger</span></code> and <code class="docutils literal"><span class="pre">Console</span></code> – are
+still available.</p>
+<p>Regarding the game, we use Arcade’s built-in collision detection code. You
+pass it an Arcade sprite and a second sprite list, and Arcade returns each
+of the sprites in the sprite list which overlap with the passed-in sprite.</p>
+<p>Our coins move down the screen and, when they reach the bottom, respawn
+themselves somewhere close to the top of the screen.</p>
+<ul class="simple">
+<li>Arcade’s collision detection</li>
+</ul>
 </div>
 </div>
 
