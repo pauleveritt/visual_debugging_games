@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Debugging During Testing and Collisions" href="../testing/index.html" />
+    <link rel="prev" title="Debugging During Testing and Moving Coins with Collisions" href="../testing/index.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -41,9 +41,18 @@
             
   <div class="section" id="annotate-types-and-scores">
 <h1>Annotate Types and Scores<a class="headerlink" href="#annotate-types-and-scores" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li>Display score</li>
-</ul>
+<p>One last feature in our game: keeping score. As we collect coins, we should
+get a point added to our score. Also, we should display a text label that
+shows the score, which updates as the score increases.</p>
+<p>Arcade deeply uses Python 3.5/3.6 type hinting, which is why it requires
+Python 3.6. PyCharm can help you with adding type hinting, via the debugger.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">You have to explicitly turn on the collection of type information during
+debugging. This is because it has a big performance hit during debugging.
+Thus, you should only collect type information when working on adding
+type hints, then disable this feature for regular debugging.</p>
+</div>
 <div class="section" id="steps">
 <h2>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
@@ -262,9 +271,32 @@ a Python 3.5 f-string.</li>
 </ul>
 </li>
 </ol>
+<ul class="simple">
+<li><em>Enable type hint collection</em>. In settings/preferences, go to
+<code class="docutils literal"><span class="pre">Build,</span> <span class="pre">Execution,</span> <span class="pre">Deployment</span> <span class="pre">|</span> <span class="pre">Python</span> <span class="pre">Debugger</span> <span class="pre">|</span> <span class="pre">Collect</span> <span class="pre">run</span> <span class="pre">time</span> <span class="pre">types</span>
+<span class="pre">information</span> <span class="pre">for</span> <span class="pre">code</span> <span class="pre">insight</span></code> and click the checkbox, then close
+settings.</li>
+<li><em>Debug</em>. Run the game under the debugger, as normal, with no breakpoints.
+Move the player around, etc.</li>
+<li><em>Quit the game</em>. Either close the Arcade window or use terminate to stop
+the debugging session.</li>
+<li><em>Click on a method</em>. We want to see what is <code class="docutils literal"><span class="pre">delta_time</span></code>, so click on
+the method definition for <code class="docutils literal"><span class="pre">MyGame.update</span></code>. Meaning, put your cursor in
+<code class="docutils literal"><span class="pre">update</span></code> for <code class="docutils literal"><span class="pre">def</span> <span class="pre">update(self,</span> <span class="pre">delta_time)</span></code>.</li>
+<li><em>Annotate types</em>. PyCharm has a “code intention” to perform the action
+we’re looking for. Do <code class="docutils literal"><span class="pre">Alt-Enter</span></code> and choose <code class="docutils literal"><span class="pre">Annotate</span> <span class="pre">types</span></code>. Press
+enter to accept the defaults for the two annotations in the red boxes.</li>
+<li><em>Turn off type hint collection</em>. Remember to go back into the preferences
+and disable <code class="docutils literal"><span class="pre">Collect</span> <span class="pre">run</span> <span class="pre">time</span> <span class="pre">types</span> <span class="pre">information</span> <span class="pre">for</span> <span class="pre">code</span> <span class="pre">insight</span></code>.</li>
+</ul>
 </div>
 <div class="section" id="what-s-going-on">
 <h2>What’s Going On<a class="headerlink" href="#what-s-going-on" title="Permalink to this headline">¶</a></h2>
+<p>This is quite cool: PyCharm is providing the type hints for you. How does
+it do it? When you run code under the debugger, PyCharm sees all the input
+and output values for functions and methods. It can then see the type
+of those. PyCharm puts this to work by offering to write the type
+information for you.</p>
 </div>
 </div>
 
@@ -297,10 +329,9 @@ a Python 3.5 f-string.</li>
 <li class="toctree-l1"><a class="reference internal" href="../enhanced_stepping/index.html">Enhanced Stepping and Motion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../watches/index.html">Watches and Keypresses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stack_frames/index.html">Stack Frames and Vertical Movement</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../viewing_images/index.html">Viewing Images and Sprites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../consoles/index.html">Consoles and Bounciness</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../attach_process/index.html">Attach to Process and Moving Coins</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Debugging During Testing and Collisions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluate_expression/index.html">Evaluate Expression and Sprites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../console/index.html">Console and Bounciness</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/index.html">Debugging During Testing and Moving Coins with Collisions</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Annotate Types and Scores</a></li>
 </ul>
 
@@ -308,7 +339,7 @@ a Python 3.5 f-string.</li>
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="../testing/index.html" title="previous chapter">Debugging During Testing and Collisions</a></li>
+      <li>Previous: <a href="../testing/index.html" title="previous chapter">Debugging During Testing and Moving Coins with Collisions</a></li>
   </ul></li>
 </ul>
 </div>
