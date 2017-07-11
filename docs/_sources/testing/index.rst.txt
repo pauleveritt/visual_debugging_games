@@ -59,8 +59,6 @@ Steps
 #. *Select method*. Click the checkbox to generate a test ``test_reset_pos``
    and click ``OK``.
 
-#. *Add to git*. Say yes to add the new test file to git.
-
 #. *Run the test*. Right-click in the ``test_coin.py`` editor and choose
    ``Run 'Unittests in test_co...`` to run the file under the project-default
    test runner (Python's standard ``unittest``.)
