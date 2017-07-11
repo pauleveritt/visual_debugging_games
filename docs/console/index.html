@@ -232,24 +232,60 @@ hitting the bottom.</li>
 the Y position until your change in Y reaches 0.</li>
 </ul>
 </li>
-</ol>
-<ul class="simple">
-<li><em>Debug at breakpoint</em>. Set a breakpoint on line 30
+<li><p class="first"><em>Debug at breakpoint</em>. Set a breakpoint on line 30
 (<code class="docutils literal"><span class="pre">self.change_y</span> <span class="pre">*=</span> <span class="pre">-BOUNCINESS</span></code>) and click <img alt="debug" src="../_images/debug6.png" /> to restart the
-game under the debugger. Execution stops at that line.</li>
-</ul>
-<p>TODO</p>
-<ul class="simple">
-<li>We have a flaw. Shouldn’t be less than zero at startup. Line 18.</li>
-<li>Click interactive console icon.</li>
-<li>Type in self.change_y</li>
-<li>Go to console, type in self.change_y * -BOUNCINESS</li>
-<li>Install ipython</li>
-<li>Rerun, go to console</li>
-</ul>
+game under the debugger. Execution stops at that line.</p>
+</li>
+<li><p class="first"><em>Switch to console</em>. The debugger tool window is on the <code class="docutils literal"><span class="pre">Debugger</span></code> tool
+tab. Click the other tab, labelled <code class="docutils literal"><span class="pre">Console</span></code>, to open the console tab.</p>
+</li>
+<li><p class="first"><em>Show Python Prompt</em>. Click the show Python prompt button <img alt="prompt" src="../_images/icon_showCommandLine.png" /> in the
+debugger console tool window.</p>
+</li>
+<li><p class="first"><em>Enter expression</em>. Type in <code class="docutils literal"><span class="pre">self.change_y</span></code> and press enter to get the
+value at that line of execution. This means we are moving down.</p>
+</li>
+<li><p class="first"><em>Press up then down arrows</em>. The console has history, which you can access
+with the up/down arrows.</p>
+</li>
+<li><p class="first"><em>Get the multiple</em>. Enter <code class="docutils literal"><span class="pre">self.change_y</span> <span class="pre">*</span> <span class="pre">-BOUNCINESS</span></code> to see what would
+be the value of the assignment on that line. We would bounce up.</p>
+</li>
+<li><p class="first"><em>Resume</em>. Click the resume button <img alt="resume" src="../_images/debug_resume3.png" /> a few times.</p>
+</li>
+<li><p class="first"><em>Look at new value</em>. Press up arrow twice to see <code class="docutils literal"><span class="pre">self.change_y</span></code> and
+its new value.</p>
+</li>
+</ol>
+<p>PyCharm’s console is useful, but <code class="docutils literal"><span class="pre">ipython</span></code> is much more featured. We can
+use it by simply installing the package. If present in the virtual
+environment, PyCharm will use it.</p>
+<ol class="arabic simple">
+<li><em>Open settings/preferences</em>. <code class="docutils literal"><span class="pre">Ctrl+Alt+S</span></code> on Windows, <code class="docutils literal"><span class="pre">Cmd-,</span></code> on
+macOS.</li>
+<li><em>Interpreter</em>. Go to <code class="docutils literal"><span class="pre">Project</span> <span class="pre">|</span> <span class="pre">Project</span> <span class="pre">Interpreter</span></code>.</li>
+<li><em>Install package</em>. Click the <code class="docutils literal"><span class="pre">+</span></code> then type in <code class="docutils literal"><span class="pre">ipython</span></code>. Click
+<code class="docutils literal"><span class="pre">Install</span> <span class="pre">Package</span></code>. When done, dismiss the dialog and click <code class="docutils literal"><span class="pre">OK</span></code> to
+close settings/preferences.</li>
+<li><em>Rerun</em>. Click the debugger’s re-run button <img alt="rerun" src="../_images/stop_and_rerun4.png" />.</li>
+<li><em>Prompt</em>. Click the <code class="docutils literal"><span class="pre">Console</span></code> tab again, and click the show Python
+prompt button <img alt="prompt" src="../_images/icon_showCommandLine.png" />.</li>
+<li><em>Use ipython</em>. Note that the prompt is now <code class="docutils literal"><span class="pre">In[1]:</span></code> which is the
+ipython prompt.</li>
+<li><em>Clear and terminate</em>. Clear your breakpoint and click the terminate
+button <img alt="terminate" src="../_images/stop9.gif" />.</li>
+</ol>
 </div>
 <div class="section" id="what-s-going-on">
 <h2>What’s Going On<a class="headerlink" href="#what-s-going-on" title="Permalink to this headline">¶</a></h2>
+<p>In the previous section, we did interactive Python at a breakpoint by
+using the <code class="docutils literal"><span class="pre">Evaluate</span> <span class="pre">Expression</span></code> dialog. Some people prefer the familiar
+Python prompt, which PyCharm can give you under the “Console” tab where
+we send the stdout for the program being debugged.</p>
+<p>While PyCharm’s built-in prompt has the basic features, <code class="docutils literal"><span class="pre">ipython</span></code> is very
+advanced and actively developed. Experienced developers are used to it, so
+PyCharm supports it (both here in the debugger and in the Python Console
+tab.)</p>
 </div>
 </div>
 

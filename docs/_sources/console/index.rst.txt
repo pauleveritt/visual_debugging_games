@@ -33,27 +33,69 @@ Steps
    - *Lines 29-30*. If you go past the bottom, apply some bounciness to
      the Y position until your change in Y reaches 0.
 
-- *Debug at breakpoint*. Set a breakpoint on line 30
-  (``self.change_y *= -BOUNCINESS``) and click |debug| to restart the
-  game under the debugger. Execution stops at that line.
+#. *Debug at breakpoint*. Set a breakpoint on line 30
+   (``self.change_y *= -BOUNCINESS``) and click |debug| to restart the
+   game under the debugger. Execution stops at that line.
 
+#. *Switch to console*. The debugger tool window is on the ``Debugger`` tool
+   tab. Click the other tab, labelled ``Console``, to open the console tab.
 
+#. *Show Python Prompt*. Click the show Python prompt button |prompt| in the
+   debugger console tool window.
 
-TODO
+#. *Enter expression*. Type in ``self.change_y`` and press enter to get the
+   value at that line of execution. This means we are moving down.
 
-- We have a flaw. Shouldn't be less than zero at startup. Line 18.
+#. *Press up then down arrows*. The console has history, which you can access
+   with the up/down arrows.
 
-- Click interactive console icon.
+#. *Get the multiple*. Enter ``self.change_y * -BOUNCINESS`` to see what would
+   be the value of the assignment on that line. We would bounce up.
 
-- Type in self.change_y
+#. *Resume*. Click the resume button |resume| a few times.
 
-- Go to console, type in self.change_y * -BOUNCINESS
+#. *Look at new value*. Press up arrow twice to see ``self.change_y`` and
+   its new value.
 
-- Install ipython
+PyCharm's console is useful, but ``ipython`` is much more featured. We can
+use it by simply installing the package. If present in the virtual
+environment, PyCharm will use it.
 
-- Rerun, go to console
+#. *Open settings/preferences*. ``Ctrl+Alt+S`` on Windows, ``Cmd-,`` on
+   macOS.
+
+#. *Interpreter*. Go to ``Project | Project Interpreter``.
+
+#. *Install package*. Click the ``+`` then type in ``ipython``. Click
+   ``Install Package``. When done, dismiss the dialog and click ``OK`` to
+   close settings/preferences.
+
+#. *Rerun*. Click the debugger's re-run button |rerun|.
+
+#. *Prompt*. Click the ``Console`` tab again, and click the show Python
+   prompt button |prompt|.
+
+#. *Use ipython*. Note that the prompt is now ``In[1]:`` which is the
+   ipython prompt.
+
+#. *Clear and terminate*. Clear your breakpoint and click the terminate
+   button |terminate|.
 
 What's Going On
 ===============
 
+In the previous section, we did interactive Python at a breakpoint by
+using the ``Evaluate Expression`` dialog. Some people prefer the familiar
+Python prompt, which PyCharm can give you under the "Console" tab where
+we send the stdout for the program being debugged.
+
+While PyCharm's built-in prompt has the basic features, ``ipython`` is very
+advanced and actively developed. Experienced developers are used to it, so
+PyCharm supports it (both here in the debugger and in the Python Console
+tab.)
+
 .. |debug| image:: ../images/debug.png
+.. |prompt| image:: ../images/icon_showCommandLine.png
+.. |rerun| image:: ../images/stop_and_rerun.png
+.. |resume| image:: ../images/debug_resume.png
+.. |terminate| image:: ../images/stop.gif

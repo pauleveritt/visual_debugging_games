@@ -79,7 +79,7 @@ environment, PyCharm will use it.
    ipython prompt.
 
 #. *Clear and terminate*. Clear your breakpoint and click the terminate
-   button |terminate*.
+   button |terminate|.
 
 What's Going On
 ===============
@@ -97,3 +97,5 @@ tab.)
 .. |debug| image:: ../images/debug.png
 .. |prompt| image:: ../images/icon_showCommandLine.png
 .. |rerun| image:: ../images/stop_and_rerun.png
+.. |resume| image:: ../images/debug_resume.png
+.. |terminate| image:: ../images/stop.gif
